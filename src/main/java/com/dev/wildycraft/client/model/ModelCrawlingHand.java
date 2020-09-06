@@ -1,212 +1,150 @@
-package wildycraft.client.model;
+// Made with Blockbench 3.6.6
+// Exported for Minecraft version 1.12
+// Paste this class into your mod and generate all required imports
 
-import org.lwjgl.opengl.GL11;
+package com.dev.wildycraft.client.model;
 
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
 
 public class ModelCrawlingHand extends ModelBase {
-	// fields
-	ModelRenderer metacarpals;
-	ModelRenderer phalange51;
-	ModelRenderer phalange21;
-	ModelRenderer phalange41;
-	ModelRenderer phalange31;
-	ModelRenderer phalange52;
-	ModelRenderer phalange22;
-	ModelRenderer phalange32;
-	ModelRenderer phalange42;
-	ModelRenderer phalange53;
-	ModelRenderer phalange43;
-	ModelRenderer phalange33;
-	ModelRenderer phalange23;
-	ModelRenderer phalange11;
-	ModelRenderer phalange12;
-	ModelRenderer carpals;
-	ModelRenderer ulna;
-	ModelRenderer radius;
+	private final ModelRenderer metacarpals;
+	private final ModelRenderer phalange51;
+	private final ModelRenderer phalange21;
+	private final ModelRenderer phalange41;
+	private final ModelRenderer phalange31;
+	private final ModelRenderer phalange52;
+	private final ModelRenderer phalange22;
+	private final ModelRenderer phalange32;
+	private final ModelRenderer phalange42;
+	private final ModelRenderer phalange53;
+	private final ModelRenderer phalange43;
+	private final ModelRenderer phalange33;
+	private final ModelRenderer phalange23;
+	private final ModelRenderer phalange11;
+	private final ModelRenderer phalange12;
+	private final ModelRenderer carpals;
+	private final ModelRenderer ulna;
+	private final ModelRenderer radius;
 
 	public ModelCrawlingHand() {
 		textureWidth = 128;
 		textureHeight = 64;
 
-		metacarpals = new ModelRenderer(this, 0, 0);
-		metacarpals.addBox(-8F, 0F, -3F, 16, 12, 5);
-		metacarpals.setRotationPoint(0F, 10F, 7F);
-		metacarpals.setTextureSize(128, 64);
-		metacarpals.mirror = true;
-		setRotation(metacarpals, -1.236189F, 0F, 0F);
-		phalange51 = new ModelRenderer(this, 42, 0);
-		phalange51.addBox(-1.5F, -2F, -2F, 3, 6, 4);
-		phalange51.setRotationPoint(-6F, 14F, -4F);
-		phalange51.setTextureSize(128, 64);
-		phalange51.mirror = true;
-		setRotation(phalange51, -0.5235988F, 0F, 0F);
-		phalange21 = new ModelRenderer(this, 56, 0);
-		phalange21.addBox(-1.5F, -1F, -2F, 3, 7, 4);
-		phalange21.setRotationPoint(6F, 14F, -4F);
-		phalange21.setTextureSize(128, 64);
-		phalange21.mirror = true;
-		setRotation(phalange21, -0.7853982F, 0F, 0F);
-		phalange41 = new ModelRenderer(this, 56, 0);
-		phalange41.addBox(-1.5F, -1F, -2F, 3, 7, 4);
-		phalange41.setRotationPoint(-2F, 14F, -4F);
-		phalange41.setTextureSize(128, 64);
-		phalange41.mirror = true;
-		setRotation(phalange41, -0.7853982F, 0F, 0F);
-		phalange31 = new ModelRenderer(this, 56, 0);
-		phalange31.addBox(-1.5F, -1F, -2F, 3, 7, 4);
-		phalange31.setRotationPoint(2F, 14F, -4F);
-		phalange31.setTextureSize(128, 64);
-		phalange31.mirror = true;
-		setRotation(phalange31, -0.7853982F, 0F, 0F);
-		phalange52 = new ModelRenderer(this, 42, 10);
-		phalange52.addBox(-1.5F, 0F, -1.5F, 3, 4, 3);
-		phalange52.setRotationPoint(-6F, 17F, -6F);
-		phalange52.setTextureSize(128, 64);
-		phalange52.mirror = true;
-		setRotation(phalange52, -0.3005271F, 0F, 0F);
-		phalange22 = new ModelRenderer(this, 42, 10);
-		phalange22.addBox(-1.5F, 0F, -1.5F, 3, 4, 3);
-		phalange22.setRotationPoint(6F, 17F, -8F);
-		phalange22.setTextureSize(128, 64);
-		phalange22.mirror = true;
-		setRotation(phalange22, -0.3005271F, 0F, 0F);
-		phalange32 = new ModelRenderer(this, 42, 10);
-		phalange32.addBox(-1.5F, 0F, -1.5F, 3, 4, 3);
-		phalange32.setRotationPoint(2F, 17F, -8F);
-		phalange32.setTextureSize(128, 64);
-		phalange32.mirror = true;
-		setRotation(phalange32, -0.3005271F, 0F, 0F);
-		phalange42 = new ModelRenderer(this, 42, 10);
-		phalange42.addBox(-1.5F, 0F, -1.5F, 3, 4, 3);
-		phalange42.setRotationPoint(-2F, 17F, -8F);
-		phalange42.setTextureSize(128, 64);
-		phalange42.mirror = true;
-		setRotation(phalange42, -0.3005271F, 0F, 0F);
-		phalange53 = new ModelRenderer(this, 70, 0);
-		phalange53.addBox(-1.5F, 0F, -1.5F, 3, 4, 3);
-		phalange53.setRotationPoint(-6F, 20F, -7F);
-		phalange53.setTextureSize(128, 64);
-		phalange53.mirror = true;
-		setRotation(phalange53, 0F, 0F, 0F);
-		phalange43 = new ModelRenderer(this, 70, 0);
-		phalange43.addBox(-1.5F, 0F, -1.5F, 3, 4, 3);
-		phalange43.setRotationPoint(-2F, 20F, -9F);
-		phalange43.setTextureSize(128, 64);
-		phalange43.mirror = true;
-		setRotation(phalange43, 0F, 0F, 0F);
-		phalange33 = new ModelRenderer(this, 70, 0);
-		phalange33.addBox(-1.5F, 0F, -1.5F, 3, 4, 3);
-		phalange33.setRotationPoint(2F, 20F, -9F);
-		phalange33.setTextureSize(128, 64);
-		phalange33.mirror = true;
-		setRotation(phalange33, 0F, 0F, 0F);
-		phalange23 = new ModelRenderer(this, 70, 0);
-		phalange23.addBox(-1.5F, 0F, -1.5F, 3, 4, 3);
-		phalange23.setRotationPoint(6F, 20F, -9F);
-		phalange23.setTextureSize(128, 64);
-		phalange23.mirror = true;
-		setRotation(phalange23, 0F, 0F, 0F);
-		phalange11 = new ModelRenderer(this, 82, 0);
-		phalange11.addBox(-2.5F, 0F, -2.5F, 5, 8, 5);
-		phalange11.setRotationPoint(6F, 11F, 5F);
-		phalange11.setTextureSize(128, 64);
-		phalange11.mirror = true;
-		setRotation(phalange11, -0.4089647F, 0F, -1.07818F);
-		phalange12 = new ModelRenderer(this, 102, 0);
-		phalange12.addBox(-2F, 0F, -2F, 4, 11, 4);
-		phalange12.setRotationPoint(11.5F, 13F, 3.7F);
-		phalange12.setTextureSize(128, 64);
-		phalange12.mirror = true;
-		setRotation(phalange12, 0F, -1.115358F, 0F);
-		carpals = new ModelRenderer(this, 0, 17);
-		carpals.addBox(-8F, 0F, -3F, 16, 7, 6);
-		carpals.setRotationPoint(0F, 10F, 10F);
-		carpals.setTextureSize(128, 64);
-		carpals.mirror = true;
-		setRotation(carpals, -1.533618F, 0F, 0F);
-		ulna = new ModelRenderer(this, 0, 47);
-		ulna.addBox(-1F, -1F, 0F, 2, 2, 12);
-		ulna.setRotationPoint(-3F, 10.06667F, 5F);
-		ulna.setTextureSize(128, 64);
-		ulna.mirror = true;
-		setRotation(ulna, 0F, 0F, 0.7853982F);
-		radius = new ModelRenderer(this, 0, 30);
-		radius.addBox(-1.5F, -1.5F, 0F, 3, 3, 14);
-		radius.setRotationPoint(2F, 10F, 5F);
-		radius.setTextureSize(128, 64);
-		radius.mirror = true;
-		setRotation(radius, 0F, 0F, 0.7853982F);
+		metacarpals = new ModelRenderer(this);
+		metacarpals.setRotationPoint(0.0F, 10.0F, 7.0F);
+		setRotationAngle(metacarpals, -1.2362F, 0.0F, 0.0F);
+		metacarpals.cubeList.add(new ModelBox(metacarpals, 0, 0, -8.0F, 0.0F, -3.0F, 16, 12, 5, 0.0F, true));
+
+		phalange51 = new ModelRenderer(this);
+		phalange51.setRotationPoint(-6.0F, 14.0F, -4.0F);
+		setRotationAngle(phalange51, -0.5236F, 0.0F, 0.0F);
+		phalange51.cubeList.add(new ModelBox(phalange51, 42, 0, -1.5F, -2.0F, -2.0F, 3, 6, 4, 0.0F, true));
+
+		phalange21 = new ModelRenderer(this);
+		phalange21.setRotationPoint(6.0F, 14.0F, -4.0F);
+		setRotationAngle(phalange21, -0.7854F, 0.0F, 0.0F);
+		phalange21.cubeList.add(new ModelBox(phalange21, 56, 0, -1.5F, -1.0F, -2.0F, 3, 7, 4, 0.0F, true));
+
+		phalange41 = new ModelRenderer(this);
+		phalange41.setRotationPoint(-2.0F, 14.0F, -4.0F);
+		setRotationAngle(phalange41, -0.7854F, 0.0F, 0.0F);
+		phalange41.cubeList.add(new ModelBox(phalange41, 56, 0, -1.5F, -1.0F, -2.0F, 3, 7, 4, 0.0F, true));
+
+		phalange31 = new ModelRenderer(this);
+		phalange31.setRotationPoint(2.0F, 14.0F, -4.0F);
+		setRotationAngle(phalange31, -0.7854F, 0.0F, 0.0F);
+		phalange31.cubeList.add(new ModelBox(phalange31, 56, 0, -1.5F, -1.0F, -2.0F, 3, 7, 4, 0.0F, true));
+
+		phalange52 = new ModelRenderer(this);
+		phalange52.setRotationPoint(-6.0F, 17.0F, -6.0F);
+		setRotationAngle(phalange52, -0.3005F, 0.0F, 0.0F);
+		phalange52.cubeList.add(new ModelBox(phalange52, 42, 10, -1.5F, 0.0F, -1.5F, 3, 4, 3, 0.0F, true));
+
+		phalange22 = new ModelRenderer(this);
+		phalange22.setRotationPoint(6.0F, 17.0F, -8.0F);
+		setRotationAngle(phalange22, -0.3005F, 0.0F, 0.0F);
+		phalange22.cubeList.add(new ModelBox(phalange22, 42, 10, -1.5F, 0.0F, -1.5F, 3, 4, 3, 0.0F, true));
+
+		phalange32 = new ModelRenderer(this);
+		phalange32.setRotationPoint(2.0F, 17.0F, -8.0F);
+		setRotationAngle(phalange32, -0.3005F, 0.0F, 0.0F);
+		phalange32.cubeList.add(new ModelBox(phalange32, 42, 10, -1.5F, 0.0F, -1.5F, 3, 4, 3, 0.0F, true));
+
+		phalange42 = new ModelRenderer(this);
+		phalange42.setRotationPoint(-2.0F, 17.0F, -8.0F);
+		setRotationAngle(phalange42, -0.3005F, 0.0F, 0.0F);
+		phalange42.cubeList.add(new ModelBox(phalange42, 42, 10, -1.5F, 0.0F, -1.5F, 3, 4, 3, 0.0F, true));
+
+		phalange53 = new ModelRenderer(this);
+		phalange53.setRotationPoint(-6.0F, 20.0F, -7.0F);
+		phalange53.cubeList.add(new ModelBox(phalange53, 70, 0, -1.5F, 0.0F, -1.5F, 3, 4, 3, 0.0F, true));
+
+		phalange43 = new ModelRenderer(this);
+		phalange43.setRotationPoint(-2.0F, 20.0F, -9.0F);
+		phalange43.cubeList.add(new ModelBox(phalange43, 70, 0, -1.5F, 0.0F, -1.5F, 3, 4, 3, 0.0F, true));
+
+		phalange33 = new ModelRenderer(this);
+		phalange33.setRotationPoint(2.0F, 20.0F, -9.0F);
+		phalange33.cubeList.add(new ModelBox(phalange33, 70, 0, -1.5F, 0.0F, -1.5F, 3, 4, 3, 0.0F, true));
+
+		phalange23 = new ModelRenderer(this);
+		phalange23.setRotationPoint(6.0F, 20.0F, -9.0F);
+		phalange23.cubeList.add(new ModelBox(phalange23, 70, 0, -1.5F, 0.0F, -1.5F, 3, 4, 3, 0.0F, true));
+
+		phalange11 = new ModelRenderer(this);
+		phalange11.setRotationPoint(6.0F, 11.0F, 5.0F);
+		setRotationAngle(phalange11, -0.409F, 0.0F, -1.0782F);
+		phalange11.cubeList.add(new ModelBox(phalange11, 82, 0, -2.5F, 0.0F, -2.5F, 5, 8, 5, 0.0F, true));
+
+		phalange12 = new ModelRenderer(this);
+		phalange12.setRotationPoint(11.5F, 13.0F, 3.7F);
+		setRotationAngle(phalange12, 0.0F, -1.1154F, 0.0F);
+		phalange12.cubeList.add(new ModelBox(phalange12, 102, 0, -2.0F, 0.0F, -2.0F, 4, 11, 4, 0.0F, true));
+
+		carpals = new ModelRenderer(this);
+		carpals.setRotationPoint(0.0F, 10.0F, 10.0F);
+		setRotationAngle(carpals, -1.5336F, 0.0F, 0.0F);
+		carpals.cubeList.add(new ModelBox(carpals, 0, 17, -8.0F, 0.0F, -3.0F, 16, 7, 6, 0.0F, true));
+
+		ulna = new ModelRenderer(this);
+		ulna.setRotationPoint(-3.0F, 10.0667F, 5.0F);
+		setRotationAngle(ulna, 0.0F, 0.0F, 0.7854F);
+		ulna.cubeList.add(new ModelBox(ulna, 0, 47, -1.0F, -1.0F, 0.0F, 2, 2, 12, 0.0F, true));
+
+		radius = new ModelRenderer(this);
+		radius.setRotationPoint(2.0F, 10.0F, 5.0F);
+		setRotationAngle(radius, 0.0F, 0.0F, 0.7854F);
+		radius.cubeList.add(new ModelBox(radius, 0, 30, -1.5F, -1.5F, 0.0F, 3, 3, 14, 0.0F, true));
 	}
 
-	public void render(Entity entity, float f, float f1, float f2, float f3,
-			float f4, float f5) {
-		super.render(entity, f, f1, f2, f3, f4, f5);
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
 		metacarpals.render(f5);
-		
-		GL11.glPushMatrix();
-		phalange51.rotateAngleX = -0.5235988F + MathHelper.cos(f * 0.6662F) * 1.4F * f1;
 		phalange51.render(f5);
-		phalange51.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
-		phalange51.postRender(f5);
-		GL11.glTranslatef(-phalange51.rotationPointX * f5,-phalange51.rotationPointY * f5, -phalange51.rotationPointZ* f5);
-		phalange52.render(f5);
-		phalange53.render(f5);
-		GL11.glPopMatrix();
-		
-		GL11.glPushMatrix();
-		phalange41.rotateAngleX = -0.7853982F + MathHelper.cos(f * 0.6662F + (float)Math.PI/2) * 1.4F * f1;
-		phalange41.render(f5);
-		phalange41.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI/2) * 1.4F * f1;
-		phalange41.postRender(f5);
-		GL11.glTranslatef(-phalange41.rotationPointX * f5,-phalange41.rotationPointY * f5, -phalange41.rotationPointZ* f5);
-		phalange42.render(f5);
-		phalange43.render(f5);
-		GL11.glPopMatrix();
-		
-		GL11.glPushMatrix();
-		phalange31.rotateAngleX = -0.7853982F + MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
-		phalange31.render(f5);
-		phalange31.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
-		phalange31.postRender(f5);
-		GL11.glTranslatef(-phalange31.rotationPointX * f5,-phalange31.rotationPointY * f5, -phalange31.rotationPointZ* f5);
-		phalange32.render(f5);
-		phalange33.render(f5);
-		GL11.glPopMatrix();
-		
-		GL11.glPushMatrix();
-		phalange21.rotateAngleX = -0.7853982F + MathHelper.cos(f * 0.6662F - (float)Math.PI/2) * 1.4F * f1;
 		phalange21.render(f5);
-		phalange21.rotateAngleX = MathHelper.cos(f * 0.6662F - (float)Math.PI/2) * 1.4F * f1;
-		phalange21.postRender(f5);
-		GL11.glTranslatef(-phalange21.rotationPointX * f5,-phalange21.rotationPointY * f5, -phalange21.rotationPointZ* f5);
+		phalange41.render(f5);
+		phalange31.render(f5);
+		phalange52.render(f5);
 		phalange22.render(f5);
+		phalange32.render(f5);
+		phalange42.render(f5);
+		phalange53.render(f5);
+		phalange43.render(f5);
+		phalange33.render(f5);
 		phalange23.render(f5);
-		GL11.glPopMatrix();
-		
-		GL11.glPushMatrix();
-		phalange11.rotateAngleX = -0.4089647F + MathHelper.cos(f * 0.6662F) * 1.4F * f1;
-		phalange11.rotateAngleZ = -1.07818F;
-		phalange11.renderWithRotation(f5);
-		phalange11.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
-		phalange11.rotateAngleZ = 0;
-		phalange11.postRender(f5);
-		GL11.glTranslatef(-phalange11.rotationPointX * f5,-phalange11.rotationPointY * f5, -phalange11.rotationPointZ* f5);
+		phalange11.render(f5);
 		phalange12.render(f5);
-		GL11.glPopMatrix();
-		
 		carpals.render(f5);
 		ulna.render(f5);
 		radius.render(f5);
 	}
 
-	private void setRotation(ModelRenderer model, float x, float y, float z) {
-		model.rotateAngleX = x;
-		model.rotateAngleY = y;
-		model.rotateAngleZ = z;
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
 	}
-
 }
