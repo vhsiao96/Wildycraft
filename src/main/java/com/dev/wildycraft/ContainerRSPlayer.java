@@ -1,4 +1,4 @@
-package wildycraft;
+package com.dev.wildycraft;
 
 import wildycraft.item.ItemAmulet;
 import wildycraft.item.ItemGloves;
