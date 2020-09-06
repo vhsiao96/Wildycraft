@@ -1,12 +1,12 @@
-package wildycraft.client.model;
+package com.dev.wildycraft.client.model;
 
+
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
 
 @SideOnly(Side.CLIENT)
 public class ModelBanshee extends ModelBiped
