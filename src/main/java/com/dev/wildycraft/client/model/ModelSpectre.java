@@ -1,80 +1,46 @@
-package wildycraft.client.model;
+// Made with Blockbench 3.6.6
+// Exported for Minecraft version 1.12
+// Paste this class into your mod and generate all required imports
 
-import org.lwjgl.opengl.GL11;
+package com.dev.wildycraft.client.model;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
 
-@SideOnly(Side.CLIENT)
-public class ModelSpectre extends ModelBiped
-{
-    public ModelSpectre()
-    {
-        this(0.0F, false);
-    }
+public class ModelSpectre extends ModelBase {
+	private final ModelRenderer bipedBody;
+	private final ModelRenderer bipedRightLeg;
+	private final ModelRenderer bipedLeftLeg;
 
-    public ModelSpectre(float par1, float par2, int par3, int par4)
-    {
-        super(par1, par2, par3, par4);
-        if(par1 != 0){
-        	this.bipedBody = new ModelRenderer(this, 16, 16);
-            this.bipedBody.addBox(-4.0F, 0.0F, -2.0F, 8, 24, 4, par1);
-            this.bipedBody.setRotationPoint(0.0F, 0.0F + par2, 0.0F);
-            this.bipedRightLeg = new ModelRenderer(this, 0, 16);
-            this.bipedRightLeg.addBox(-2.0F, 0.0F, -2.0F, 0, 0, 0, par1);
-            this.bipedRightLeg.setRotationPoint(-1.9F, 12.0F + par2, 0.0F);
-            this.bipedLeftLeg = new ModelRenderer(this, 0, 16);
-            this.bipedLeftLeg.mirror = true;
-            this.bipedLeftLeg.addBox(-2.0F, 0.0F, -2.0F, 0, 0, 0, par1);
-            this.bipedLeftLeg.setRotationPoint(1.9F, 12.0F + par2, 0.0F);
-        }
-    }
+	public ModelSpectre() {
+		textureWidth = 16;
+		textureHeight = 16;
 
-    public ModelSpectre(float par1, boolean par2)
-    {
-        super(par1, 0.0F, 64, par2 ? 32 : 64);
-    }
+		bipedBody = new ModelRenderer(this);
+		bipedBody.setRotationPoint(0.0F, 0.0F, 0.0F);
+		bipedBody.cubeList.add(new ModelBox(bipedBody, 16, 16, -4.0F, 0.0F, -2.0F, 8, 24, 4, 0.0F, false));
 
-    
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-    {
-    	//GL11.glPushMatrix();
-    	//GL11.glEnable(GL11.GL_BLEND);
-        //GL11.glColor4f(1.0f, 1.0f, 1.0f, 0.66f);
+		bipedRightLeg = new ModelRenderer(this);
+		bipedRightLeg.setRotationPoint(0.0F, 0.0F, 0.0F);
+		bipedRightLeg.cubeList.add(new ModelBox(bipedRightLeg, 0, 16, -2.0F, 0.0F, -2.0F, 0, 0, 0, 0.0F, false));
 
-    	super.render(entity,f, f1, f2, f3, f4, f5);
-    	
-    	//GL11.glDisable(GL11.GL_BLEND);
-    	//GL11.glPopMatrix();
-      
-    }
-    /**
-     * Sets the model's various rotation angles. For bipeds, par1 and par2 are used for animating the movement of arms
-     * and legs, where par1 represents the time(so that arms and legs swing back and forth) and par2 represents how
-     * "far" arms and legs can swing at most.
-     */
-    public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity)
-    {
-    	super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
-    	this.bipedHead.rotateAngleY = par4 / (180F / (float)Math.PI);
-        this.bipedHead.rotateAngleX = par5 / (180F / (float)Math.PI);
-        this.bipedRightArm.rotateAngleX = 0.0F;
-        this.bipedLeftArm.rotateAngleX = 0.0F;
-        this.bipedRightArm.rotateAngleZ = 0.0F;
-        this.bipedLeftArm.rotateAngleZ = 0.0F;
-        this.bipedRightLeg.rotateAngleX = 0.0F;
-        this.bipedLeftLeg.rotateAngleX = 0.0F;
-        this.bipedRightLeg.rotateAngleY = 0.0F;
-        this.bipedLeftLeg.rotateAngleY = 0.0F;
-        if(par2 != 0){
-        	this.bipedRightArm.rotateAngleX = -par2*2;
-            this.bipedLeftArm.rotateAngleX = -par2*2;
-            this.bipedRightLeg.rotateAngleX = par2/2;
-            this.bipedLeftLeg.rotateAngleX = par2/2;
-        }
-    }
+		bipedLeftLeg = new ModelRenderer(this);
+		bipedLeftLeg.setRotationPoint(0.0F, 0.0F, 0.0F);
+		bipedLeftLeg.cubeList.add(new ModelBox(bipedLeftLeg, 0, 16, -2.0F, 0.0F, -2.0F, 0, 0, 0, 0.0F, true));
+	}
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		bipedBody.render(f5);
+		bipedRightLeg.render(f5);
+		bipedLeftLeg.render(f5);
+	}
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
+	}
 }
