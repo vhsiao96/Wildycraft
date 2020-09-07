@@ -1,211 +1,152 @@
-package wildycraft.client.model;
+// Made with Blockbench 3.6.6
+// Exported for Minecraft version 1.12
+// Paste this class into your mod and generate all required imports
 
-import org.lwjgl.opengl.GL11;
+package com.dev.wildycraft.client.model;
 
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
 
-public class ModelSuqah extends ModelBase
-{
-  //fields
-    ModelRenderer head;
-    ModelRenderer body;
-    public ModelRenderer rightarm;
-    public ModelRenderer leftarm;
-    ModelRenderer rightthigh;
-    ModelRenderer leftthigh;
-    ModelRenderer chestplate;
-    ModelRenderer helmet;
-    ModelRenderer helmetrim;
-    ModelRenderer helmetbit;
-    ModelRenderer leftleg;
-    ModelRenderer rightleg;
-    ModelRenderer leftshoulderpad;
-    ModelRenderer rightshoulderpad;
-    ModelRenderer leftfoot;
-    ModelRenderer rightfoot;
-    ModelRenderer rightear;
-    ModelRenderer lefttear;
-  
-  public ModelSuqah()
-  {
-    textureWidth = 256;
-    textureHeight = 128;
-    
-      head = new ModelRenderer(this, 111, 20);
-      head.addBox(-4F, -9F, -5F, 8, 10, 9);
-      head.setRotationPoint(0F, -16F, -3F);
-      head.setTextureSize(256, 128);
-      head.mirror = true;
-      setRotation(head, 0.0349066F, 0F, 0F);
-      body = new ModelRenderer(this, 106, 67);
-      body.addBox(-5.5F, -4F, -4F, 11, 12, 8);
-      body.setRotationPoint(0F, -4F, 0F);
-      body.setTextureSize(256, 128);
-      body.mirror = true;
-      setRotation(body, 0.0523599F, 0F, 0F);
-      rightarm = new ModelRenderer(this, 160, 45);
-      rightarm.addBox(-7F, 2F, -2F, 5, 17, 5);
-      rightarm.setRotationPoint(-7F, -13F, 0F);
-      rightarm.setTextureSize(256, 128);
-      rightarm.mirror = true;
-      setRotation(rightarm, -0.0523599F, 0F, 0F);
-      leftarm = new ModelRenderer(this, 160, 45);
-      leftarm.addBox(2F, 2F, -2F, 5, 17, 5);
-      leftarm.setRotationPoint(7F, -13F, 0F);
-      leftarm.setTextureSize(256, 128);
-      leftarm.mirror = true;
-      setRotation(leftarm, -0.0523599F, 0F, 0F);
-      rightthigh = new ModelRenderer(this, 115, 90);
-      rightthigh.addBox(-2.5F, 0F, -3F, 5, 12, 6);
-      rightthigh.setRotationPoint(-3F, 2F, 0F);
-      rightthigh.setTextureSize(256, 128);
-      rightthigh.mirror = true;
-      setRotation(rightthigh, -0.4363323F, 0F, 0F);
-      leftthigh = new ModelRenderer(this, 115, 90);
-      leftthigh.addBox(-2.5F, 0F, -3F, 5, 12, 6);
-      leftthigh.setRotationPoint(3F, 2F, 0F);
-      leftthigh.setTextureSize(256, 128);
-      leftthigh.mirror = true;
-      setRotation(leftthigh, -0.4363323F, 0F, 0F);
-      chestplate = new ModelRenderer(this, 104, 42);
-      chestplate.addBox(-7F, -12F, -5.2F, 14, 11, 10);
-      chestplate.setRotationPoint(0F, -4F, 0F);
-      chestplate.setTextureSize(256, 128);
-      chestplate.mirror = true;
-      setRotation(chestplate, 0.0872665F, 0F, 0F);
-      helmet = new ModelRenderer(this, 110, 5);
-      helmet.addBox(-4.5F, -9.2F, -5.5F, 9, 3, 10);
-      helmet.setRotationPoint(0F, -16F, -3F);
-      helmet.setTextureSize(256, 128);
-      helmet.mirror = true;
-      setRotation(helmet, 0.0349066F, 0F, 0F);
-      helmetrim = new ModelRenderer(this, 152, 5);
-      helmetrim.addBox(-4.5F, -6.2F, -5.5F, 9, 1, 10);
-      helmetrim.setRotationPoint(0F, -16F, -3F);
-      helmetrim.setTextureSize(256, 128);
-      helmetrim.mirror = true;
-      setRotation(helmetrim, 0.0349066F, 0F, 0F);
-      helmetbit = new ModelRenderer(this, 152, 21);
-      helmetbit.addBox(-0.5F, -6F, -5.7F, 1, 3, 1);
-      helmetbit.setRotationPoint(0F, -16F, -3F);
-      helmetbit.setTextureSize(256, 128);
-      helmetbit.mirror = true;
-      setRotation(helmetbit, 0.0349066F, 0F, 0F);
-      leftleg = new ModelRenderer(this, 145, 95);
-      leftleg.addBox(-2F, 7F, -9F, 4, 13, 5);
-      leftleg.setRotationPoint(3F, 2F, 0F);
-      leftleg.setTextureSize(256, 128);
-      leftleg.mirror = true;
-      setRotation(leftleg, 0.2617994F, 0F, 0F);
-      rightleg = new ModelRenderer(this, 145, 95);
-      rightleg.addBox(-2F, 7F, -9F, 4, 13, 5);
-      rightleg.setRotationPoint(-3F, 2F, 0F);
-      rightleg.setTextureSize(256, 128);
-      rightleg.mirror = true;
-      setRotation(rightleg, 0.2617994F, 0F, 0F);
-      leftshoulderpad = new ModelRenderer(this, 55, 45);
-      leftshoulderpad.addBox(0F, -4F, -6.5F, 9, 10, 11);
-      leftshoulderpad.setRotationPoint(7F, -13F, 0F);
-      leftshoulderpad.setTextureSize(256, 128);
-      leftshoulderpad.mirror = true;
-      setRotation(leftshoulderpad, 0.0872665F, 0F, 0F);
-      rightshoulderpad = new ModelRenderer(this, 55, 45);
-      rightshoulderpad.addBox(-9F, -4F, -6.5F, 9, 10, 11);
-      rightshoulderpad.setRotationPoint(-7F, -13F, 0F);
-      rightshoulderpad.setTextureSize(256, 128);
-      rightshoulderpad.mirror = true;
-      setRotation(rightshoulderpad, 0.0872665F, 0F, 0F);
-      leftfoot = new ModelRenderer(this, 170, 100);
-      leftfoot.addBox(-2.5F, 20F, -6.7F, 5, 2, 8);
-      leftfoot.setRotationPoint(3F, 2F, 0F);
-      leftfoot.setTextureSize(256, 128);
-      leftfoot.mirror = true;
-      setRotation(leftfoot, 0F, 0F, 0F);
-      rightfoot = new ModelRenderer(this, 170, 100);
-      rightfoot.addBox(-2.5F, 20F, -6.7F, 5, 2, 8);
-      rightfoot.setRotationPoint(-3F, 2F, 0F);
-      rightfoot.setTextureSize(256, 128);
-      rightfoot.mirror = true;
-      setRotation(rightfoot, 0F, 0F, 0F);
-      rightear = new ModelRenderer(this, 85, 20);
-      rightear.addBox(-5F, -11F, 0F, 0, 8, 7);
-      rightear.setRotationPoint(0F, -16F, -3F);
-      rightear.setTextureSize(256, 128);
-      rightear.mirror = true;
-      setRotation(rightear, 0.0349066F, -0.5410521F, 0F);
-      lefttear = new ModelRenderer(this, 85, 20);
-      lefttear.addBox(5F, -11F, 0F, 0, 8, 7);
-      lefttear.setRotationPoint(0F, -16F, -3F);
-      lefttear.setTextureSize(256, 128);
-      lefttear.mirror = true;
-      setRotation(lefttear, 0.0349066F, 0.5410521F, 0F);
-  }
-  
-  public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-  {
-    super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-    head.render(f5);
-    body.render(f5);
-    rightarm.render(f5);
-    leftarm.render(f5);
-    chestplate.render(f5);
-    helmet.render(f5);
-    helmetrim.render(f5);
-    helmetbit.render(f5);
-    leftshoulderpad.render(f5);
-    rightshoulderpad.render(f5);
-    
-    GL11.glPushMatrix();
-    leftthigh.render(f5);
-    leftthigh.rotateAngleX = MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1;
-    leftthigh.postRender(f5);
-    GL11.glTranslatef(-leftthigh.rotationPointX * f5,-leftthigh.rotationPointY * f5, -leftthigh.rotationPointZ* f5);
-    leftleg.render(f5);
-    leftfoot.render(f5);
-    GL11.glPopMatrix();
-    
-    GL11.glPushMatrix();
-    rightthigh.render(f5);
-    rightthigh.rotateAngleX = MathHelper.cos(f * 0.6662F) * 1.4F * f1;
-    rightthigh.postRender(f5);
-    GL11.glTranslatef(-rightthigh.rotationPointX * f5,-rightthigh.rotationPointY * f5, -rightthigh.rotationPointZ* f5);
-    rightleg.render(f5);
-    rightfoot.render(f5);
-    GL11.glPopMatrix();
-    
-    rightear.render(f5);
-    lefttear.render(f5);
-  }
-  
-  private void setRotation(ModelRenderer model, float x, float y, float z)
-  {
-    model.rotateAngleX = x;
-    model.rotateAngleY = y;
-    model.rotateAngleZ = z;
-  }
-  
-  public void setRotationAngles(float par1, float par2, float par3, float par4, float par5, float par6, Entity par7Entity)
-  {
-    super.setRotationAngles(par1, par2, par3, par4, par5, par6, par7Entity);
-    this.rightarm.rotateAngleX = -0.0523599F + MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F;
-    this.leftarm.rotateAngleX = -0.0523599F + MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F;
-    this.rightarm.rotateAngleZ = 0.0F;
-    this.leftarm.rotateAngleZ = 0.0F;
-    this.rightarm.rotateAngleZ += MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
-    this.leftarm.rotateAngleZ -= MathHelper.cos(par3 * 0.09F) * 0.05F + 0.05F;
-    this.rightarm.rotateAngleX += MathHelper.sin(par3 * 0.067F) * 0.05F;
-    this.leftarm.rotateAngleX -= MathHelper.sin(par3 * 0.067F) * 0.05F;
-    this.rightshoulderpad.rotateAngleX = 0.0872665F + MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 2.0F * par2 * 0.5F;
-    this.rightshoulderpad.rotateAngleZ = rightarm.rotateAngleZ;
-    this.leftshoulderpad.rotateAngleX = 0.0872665F + MathHelper.cos(par1 * 0.6662F) * 2.0F * par2 * 0.5F;
-    this.leftshoulderpad.rotateAngleX = leftarm.rotateAngleX;
-    
-    this.rightthigh.rotateAngleX = -0.4363323F + MathHelper.cos(par1 * 0.6662F) * 1.4F * par2;
-    this.leftthigh.rotateAngleX = -0.4363323F + MathHelper.cos(par1 * 0.6662F + (float)Math.PI) * 1.4F * par2;
-  }
+public class ModelSuqah extends ModelBase {
+	private final ModelRenderer head;
+	private final ModelRenderer body;
+	private final ModelRenderer rightarm;
+	private final ModelRenderer leftarm;
+	private final ModelRenderer rightthigh;
+	private final ModelRenderer leftthigh;
+	private final ModelRenderer chestplate;
+	private final ModelRenderer helmet;
+	private final ModelRenderer helmetrim;
+	private final ModelRenderer helmetbit;
+	private final ModelRenderer leftleg;
+	private final ModelRenderer rightleg;
+	private final ModelRenderer leftshoulderpad;
+	private final ModelRenderer rightshoulderpad;
+	private final ModelRenderer leftfoot;
+	private final ModelRenderer rightfoot;
+	private final ModelRenderer rightear;
+	private final ModelRenderer lefttear;
 
+	public ModelSuqah() {
+		textureWidth = 256;
+		textureHeight = 128;
+
+		head = new ModelRenderer(this);
+		head.setRotationPoint(0.0F, -16.0F, -3.0F);
+		setRotationAngle(head, 0.0349F, 0.0F, 0.0F);
+		head.cubeList.add(new ModelBox(head, 111, 20, -4.0F, -9.0F, -5.0F, 8, 10, 9, 0.0F, true));
+
+		body = new ModelRenderer(this);
+		body.setRotationPoint(0.0F, -4.0F, 0.0F);
+		setRotationAngle(body, 0.0524F, 0.0F, 0.0F);
+		body.cubeList.add(new ModelBox(body, 106, 67, -5.5F, -4.0F, -4.0F, 11, 12, 8, 0.0F, true));
+
+		rightarm = new ModelRenderer(this);
+		rightarm.setRotationPoint(-7.0F, -13.0F, 0.0F);
+		setRotationAngle(rightarm, -0.0524F, 0.0F, 0.0F);
+		rightarm.cubeList.add(new ModelBox(rightarm, 160, 45, -7.0F, 2.0F, -2.0F, 5, 17, 5, 0.0F, true));
+
+		leftarm = new ModelRenderer(this);
+		leftarm.setRotationPoint(7.0F, -13.0F, 0.0F);
+		setRotationAngle(leftarm, -0.0524F, 0.0F, 0.0F);
+		leftarm.cubeList.add(new ModelBox(leftarm, 160, 45, 2.0F, 2.0F, -2.0F, 5, 17, 5, 0.0F, true));
+
+		rightthigh = new ModelRenderer(this);
+		rightthigh.setRotationPoint(-3.0F, 2.0F, 0.0F);
+		setRotationAngle(rightthigh, -0.4363F, 0.0F, 0.0F);
+		rightthigh.cubeList.add(new ModelBox(rightthigh, 115, 90, -2.5F, 0.0F, -3.0F, 5, 12, 6, 0.0F, true));
+
+		leftthigh = new ModelRenderer(this);
+		leftthigh.setRotationPoint(3.0F, 2.0F, 0.0F);
+		setRotationAngle(leftthigh, -0.4363F, 0.0F, 0.0F);
+		leftthigh.cubeList.add(new ModelBox(leftthigh, 115, 90, -2.5F, 0.0F, -3.0F, 5, 12, 6, 0.0F, true));
+
+		chestplate = new ModelRenderer(this);
+		chestplate.setRotationPoint(0.0F, -4.0F, 0.0F);
+		setRotationAngle(chestplate, 0.0873F, 0.0F, 0.0F);
+		chestplate.cubeList.add(new ModelBox(chestplate, 104, 42, -7.0F, -12.0F, -5.2F, 14, 11, 10, 0.0F, true));
+
+		helmet = new ModelRenderer(this);
+		helmet.setRotationPoint(0.0F, -16.0F, -3.0F);
+		setRotationAngle(helmet, 0.0349F, 0.0F, 0.0F);
+		helmet.cubeList.add(new ModelBox(helmet, 110, 5, -4.5F, -9.2F, -5.5F, 9, 3, 10, 0.0F, true));
+
+		helmetrim = new ModelRenderer(this);
+		helmetrim.setRotationPoint(0.0F, -16.0F, -3.0F);
+		setRotationAngle(helmetrim, 0.0349F, 0.0F, 0.0F);
+		helmetrim.cubeList.add(new ModelBox(helmetrim, 152, 5, -4.5F, -6.2F, -5.5F, 9, 1, 10, 0.0F, true));
+
+		helmetbit = new ModelRenderer(this);
+		helmetbit.setRotationPoint(0.0F, -16.0F, -3.0F);
+		setRotationAngle(helmetbit, 0.0349F, 0.0F, 0.0F);
+		helmetbit.cubeList.add(new ModelBox(helmetbit, 152, 21, -0.5F, -6.0F, -5.7F, 1, 3, 1, 0.0F, true));
+
+		leftleg = new ModelRenderer(this);
+		leftleg.setRotationPoint(3.0F, 2.0F, 0.0F);
+		setRotationAngle(leftleg, 0.2618F, 0.0F, 0.0F);
+		leftleg.cubeList.add(new ModelBox(leftleg, 145, 95, -2.0F, 7.0F, -9.0F, 4, 13, 5, 0.0F, true));
+
+		rightleg = new ModelRenderer(this);
+		rightleg.setRotationPoint(-3.0F, 2.0F, 0.0F);
+		setRotationAngle(rightleg, 0.2618F, 0.0F, 0.0F);
+		rightleg.cubeList.add(new ModelBox(rightleg, 145, 95, -2.0F, 7.0F, -9.0F, 4, 13, 5, 0.0F, true));
+
+		leftshoulderpad = new ModelRenderer(this);
+		leftshoulderpad.setRotationPoint(7.0F, -13.0F, 0.0F);
+		setRotationAngle(leftshoulderpad, 0.0873F, 0.0F, 0.0F);
+		leftshoulderpad.cubeList.add(new ModelBox(leftshoulderpad, 55, 45, 0.0F, -4.0F, -6.5F, 9, 10, 11, 0.0F, true));
+
+		rightshoulderpad = new ModelRenderer(this);
+		rightshoulderpad.setRotationPoint(-7.0F, -13.0F, 0.0F);
+		setRotationAngle(rightshoulderpad, 0.0873F, 0.0F, 0.0F);
+		rightshoulderpad.cubeList.add(new ModelBox(rightshoulderpad, 55, 45, -9.0F, -4.0F, -6.5F, 9, 10, 11, 0.0F, true));
+
+		leftfoot = new ModelRenderer(this);
+		leftfoot.setRotationPoint(3.0F, 2.0F, 0.0F);
+		leftfoot.cubeList.add(new ModelBox(leftfoot, 170, 100, -2.5F, 20.0F, -6.7F, 5, 2, 8, 0.0F, true));
+
+		rightfoot = new ModelRenderer(this);
+		rightfoot.setRotationPoint(-3.0F, 2.0F, 0.0F);
+		rightfoot.cubeList.add(new ModelBox(rightfoot, 170, 100, -2.5F, 20.0F, -6.7F, 5, 2, 8, 0.0F, true));
+
+		rightear = new ModelRenderer(this);
+		rightear.setRotationPoint(0.0F, -16.0F, -3.0F);
+		setRotationAngle(rightear, 0.0349F, -0.5411F, 0.0F);
+		rightear.cubeList.add(new ModelBox(rightear, 85, 20, -5.0F, -11.0F, 0.0F, 0, 8, 7, 0.0F, true));
+
+		lefttear = new ModelRenderer(this);
+		lefttear.setRotationPoint(0.0F, -16.0F, -3.0F);
+		setRotationAngle(lefttear, 0.0349F, 0.5411F, 0.0F);
+		lefttear.cubeList.add(new ModelBox(lefttear, 85, 20, 5.0F, -11.0F, 0.0F, 0, 8, 7, 0.0F, true));
+	}
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		head.render(f5);
+		body.render(f5);
+		rightarm.render(f5);
+		leftarm.render(f5);
+		rightthigh.render(f5);
+		leftthigh.render(f5);
+		chestplate.render(f5);
+		helmet.render(f5);
+		helmetrim.render(f5);
+		helmetbit.render(f5);
+		leftleg.render(f5);
+		rightleg.render(f5);
+		leftshoulderpad.render(f5);
+		rightshoulderpad.render(f5);
+		leftfoot.render(f5);
+		rightfoot.render(f5);
+		rightear.render(f5);
+		lefttear.render(f5);
+	}
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
+	}
 }
