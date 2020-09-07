@@ -1,99 +1,76 @@
-package wildycraft.client.model;
+// Made with Blockbench 3.6.6
+// Exported for Minecraft version 1.12
+// Paste this class into your mod and generate all required imports
+
+package com.dev.wildycraft.client.model;
 
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
 
-public class ModelGloves extends ModelBase
-{
-  //fields
-    ModelRenderer head;
-    ModelRenderer body;
-    ModelRenderer rightarm;
-    ModelRenderer leftarm;
-    ModelRenderer rightleg;
-    ModelRenderer leftleg;
-    public ModelRenderer rightGlove;
-    public ModelRenderer leftGlove;
-  
-  public ModelGloves()
-  {
-    textureWidth = 64;
-    textureHeight = 32;
-    
-      head = new ModelRenderer(this, 0, 0);
-      head.addBox(-4F, -8F, -4F, 8, 8, 8);
-      head.setRotationPoint(0F, 0F, 0F);
-      head.setTextureSize(64, 32);
-      head.mirror = true;
-      setRotation(head, 0F, 0F, 0F);
-      body = new ModelRenderer(this, 16, 16);
-      body.addBox(-4F, 0F, -2F, 8, 12, 4);
-      body.setRotationPoint(0F, 0F, 0F);
-      body.setTextureSize(64, 32);
-      body.mirror = true;
-      setRotation(body, 0F, 0F, 0F);
-      rightarm = new ModelRenderer(this, 40, 16);
-      rightarm.addBox(-3F, -2F, -2F, 4, 12, 4);
-      rightarm.setRotationPoint(-5F, 2F, 0F);
-      rightarm.setTextureSize(64, 32);
-      rightarm.mirror = true;
-      setRotation(rightarm, 0F, 0F, 0F);
-      leftarm = new ModelRenderer(this, 40, 16);
-      leftarm.addBox(-1F, -2F, -2F, 4, 12, 4);
-      leftarm.setRotationPoint(5F, 2F, 0F);
-      leftarm.setTextureSize(64, 32);
-      leftarm.mirror = true;
-      setRotation(leftarm, 0F, 0F, 0F);
-      rightleg = new ModelRenderer(this, 0, 16);
-      rightleg.addBox(-2F, 0F, -2F, 4, 12, 4);
-      rightleg.setRotationPoint(-2F, 12F, 0F);
-      rightleg.setTextureSize(64, 32);
-      rightleg.mirror = true;
-      setRotation(rightleg, 0F, 0F, 0F);
-      leftleg = new ModelRenderer(this, 0, 16);
-      leftleg.addBox(-2F, 0F, -2F, 4, 12, 4);
-      leftleg.setRotationPoint(2F, 12F, 0F);
-      leftleg.setTextureSize(64, 32);
-      leftleg.mirror = true;
-      setRotation(leftleg, 0F, 0F, 0F);
-      rightGlove = new ModelRenderer(this, 0, 0);
-      rightGlove.addBox(-3.7F, 5.5F, -2.5F, 5, 5, 5);
-      rightGlove.setRotationPoint(-5F, 2F, 0F);
-      rightGlove.setTextureSize(64, 32);
-      rightGlove.mirror = true;
-      setRotation(rightGlove, 0F, 0F, 0F);
-      leftGlove = new ModelRenderer(this, 0, 10);
-      leftGlove.addBox(-1.3F, 5.5F, -2.5F, 5, 5, 5);
-      leftGlove.setRotationPoint(5F, 2F, 0F);
-      leftGlove.setTextureSize(64, 32);
-      leftGlove.mirror = true;
-      setRotation(leftGlove, 0F, 0F, 0F);
-  }
-  
-  /*public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-  {
-    super.render(entity, f, f1, f2, f3, f4, f5);
-    setRotationAngles(f, f1, f2, f3, f4, f5);
-    head.render(f5);
-    body.render(f5);
-    rightarm.render(f5);
-    leftarm.render(f5);
-    rightleg.render(f5);
-    leftleg.render(f5);
-    rightGlove.render(f5);
-    leftGlove.render(f5);
-  }*/
-  
-  public void setRotation(ModelRenderer model, float x, float y, float z)
-  {
-    model.rotateAngleX = x;
-    model.rotateAngleY = y;
-    model.rotateAngleZ = z;
-  }
-  
- /* public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)
-  {
-    super.setRotationAngles(f, f1, f2, f3, f4, f5);
-  }*/
+public class ModelGloves extends ModelBase {
+	private final ModelRenderer head;
+	private final ModelRenderer body;
+	private final ModelRenderer rightarm;
+	private final ModelRenderer leftarm;
+	private final ModelRenderer rightleg;
+	private final ModelRenderer leftleg;
+	private final ModelRenderer rightGlove;
+	private final ModelRenderer leftGlove;
 
+	public ModelGloves() {
+		textureWidth = 64;
+		textureHeight = 32;
+
+		head = new ModelRenderer(this);
+		head.setRotationPoint(0.0F, 0.0F, 0.0F);
+		head.cubeList.add(new ModelBox(head, 0, 0, -4.0F, -8.0F, -4.0F, 8, 8, 8, 0.0F, true));
+
+		body = new ModelRenderer(this);
+		body.setRotationPoint(0.0F, 0.0F, 0.0F);
+		body.cubeList.add(new ModelBox(body, 16, 16, -4.0F, 0.0F, -2.0F, 8, 12, 4, 0.0F, true));
+
+		rightarm = new ModelRenderer(this);
+		rightarm.setRotationPoint(-5.0F, 2.0F, 0.0F);
+		rightarm.cubeList.add(new ModelBox(rightarm, 40, 16, -3.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F, true));
+
+		leftarm = new ModelRenderer(this);
+		leftarm.setRotationPoint(5.0F, 2.0F, 0.0F);
+		leftarm.cubeList.add(new ModelBox(leftarm, 40, 16, -1.0F, -2.0F, -2.0F, 4, 12, 4, 0.0F, true));
+
+		rightleg = new ModelRenderer(this);
+		rightleg.setRotationPoint(-2.0F, 12.0F, 0.0F);
+		rightleg.cubeList.add(new ModelBox(rightleg, 0, 16, -2.0F, 0.0F, -2.0F, 4, 12, 4, 0.0F, true));
+
+		leftleg = new ModelRenderer(this);
+		leftleg.setRotationPoint(2.0F, 12.0F, 0.0F);
+		leftleg.cubeList.add(new ModelBox(leftleg, 0, 16, -2.0F, 0.0F, -2.0F, 4, 12, 4, 0.0F, true));
+
+		rightGlove = new ModelRenderer(this);
+		rightGlove.setRotationPoint(-5.0F, 2.0F, 0.0F);
+		rightGlove.cubeList.add(new ModelBox(rightGlove, 0, 0, -3.7F, 5.5F, -2.5F, 5, 5, 5, 0.0F, true));
+
+		leftGlove = new ModelRenderer(this);
+		leftGlove.setRotationPoint(5.0F, 2.0F, 0.0F);
+		leftGlove.cubeList.add(new ModelBox(leftGlove, 0, 10, -1.3F, 5.5F, -2.5F, 5, 5, 5, 0.0F, true));
+	}
+
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		head.render(f5);
+		body.render(f5);
+		rightarm.render(f5);
+		leftarm.render(f5);
+		rightleg.render(f5);
+		leftleg.render(f5);
+		rightGlove.render(f5);
+		leftGlove.render(f5);
+	}
+
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
+	}
 }
