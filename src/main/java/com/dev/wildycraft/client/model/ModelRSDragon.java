@@ -1,696 +1,442 @@
-package wildycraft.client.model;
+// Made with Blockbench 3.6.6
+// Exported for Minecraft version 1.12
+// Paste this class into your mod and generate all required imports
 
-import org.lwjgl.opengl.GL11;
+package com.dev.wildycraft.client.model;
 
-import wildycraft.entity.EntityRSGhast;
 import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelBox;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.MathHelper;
 
-public class ModelRSDragon extends ModelBase
-{
-  //fields
-    ModelRenderer WingWeb11;
-    ModelRenderer WingWeb22;
-    ModelRenderer WingMidBone1;
-    ModelRenderer WingJoint1;
-    ModelRenderer WingJoint2;
-    ModelRenderer Belly;
-    ModelRenderer Body1;
-    ModelRenderer Body2;
-    ModelRenderer Body3;
-    ModelRenderer Rear;
-    ModelRenderer Spine1;
-    ModelRenderer Spine2;
-    ModelRenderer Spine3;
-    ModelRenderer Spine4;
-    ModelRenderer Spine5;
-    ModelRenderer Spine6;
-    ModelRenderer SideNeck1;
-    ModelRenderer SideNeck2;
-    ModelRenderer Neck1;
-    ModelRenderer Neck2;
-    ModelRenderer Head;
-    ModelRenderer UpperJaw;
-    ModelRenderer LowerJaw;
-    ModelRenderer Nose;
-    ModelRenderer NoseTop;
-    ModelRenderer SideNoseAndFrontTeeth1;
-    ModelRenderer SideNoseAndFrontTeeth2;
-    ModelRenderer BackTeeth1;
-    ModelRenderer BackTeeth2;
-    ModelRenderer Eye1;
-    ModelRenderer Eye2;
-    ModelRenderer EyeTop;
-    ModelRenderer FaceWeb12;
-    ModelRenderer FaceWeb22;
-    ModelRenderer FaceWeb11;
-    ModelRenderer FaceWeb21;
-    ModelRenderer FaceWebMiddle;
-    ModelRenderer UpperLeg21;
-    ModelRenderer LowerLeg21;
-    ModelRenderer FootBase21;
-    ModelRenderer FootTop21;
-    ModelRenderer UpperLeg11;
-    ModelRenderer LowerLeg11;
-    ModelRenderer FootBase11;
-    ModelRenderer FootTop11;
-    ModelRenderer UpperLeg12;
-    ModelRenderer LowerLeg12;
-    ModelRenderer FootBase12;
-    ModelRenderer FootTop12;
-    ModelRenderer UpperLeg22;
-    ModelRenderer LowerLeg22;
-    ModelRenderer FootBase22;
-    ModelRenderer FootTop22;
-    ModelRenderer WingMidBone2;
-    ModelRenderer WingWeb12;
-    ModelRenderer WingWeb21;
-    ModelRenderer Tail1;
-    ModelRenderer Tail2;
-    ModelRenderer Tail3;
-    ModelRenderer Tail4;
-    ModelRenderer Tail5;
-    ModelRenderer Tail6;
-  
-  public ModelRSDragon()
-  {
-    textureWidth = 512;
-    textureHeight = 128;
-    
-      WingWeb11 = new ModelRenderer(this, 113, 97);
-      WingWeb11.addBox(0F, 0F, 0F, 31, 0, 25);
-      WingWeb11.setRotationPoint(26F, 2F, -11F);
-      WingWeb11.setTextureSize(512, 128);
-      WingWeb11.mirror = true;
-      setRotation(WingWeb11, 0F, 0F, 0F);
-      WingWeb22 = new ModelRenderer(this, 390, 65);
-      WingWeb22.addBox(-18F, 0F, -3F, 18, 0, 24);
-      WingWeb22.setRotationPoint(-8F, 2F, -8F);
-      WingWeb22.setTextureSize(512, 128);
-      WingWeb22.mirror = true;
-      setRotation(WingWeb22, 0F, 0F, 0F);
-      WingMidBone1 = new ModelRenderer(this, 285, 100);
-      WingMidBone1.addBox(-0.5F, -0.5F, 0F, 1, 0, 24);
-      WingMidBone1.setRotationPoint(-26F, 2.5F, -11F);
-      WingMidBone1.setTextureSize(512, 128);
-      WingMidBone1.mirror = true;
-      setRotation(WingMidBone1, 0F, 0F, 0F);
-      WingJoint1 = new ModelRenderer(this, 205, 0);
-      WingJoint1.addBox(-1.5F, 0F, 0F, 3, 4, 8);
-      WingJoint1.setRotationPoint(8.5F, 3F, -3F);
-      WingJoint1.setTextureSize(512, 128);
-      WingJoint1.mirror = true;
-      setRotation(WingJoint1, -2.416618F, 0F, 0F);
-      WingJoint2 = new ModelRenderer(this, 205, 0);
-      WingJoint2.addBox(-2F, -3F, -5F, 3, 4, 8);
-      WingJoint2.setRotationPoint(-8F, 4F, -8F);
-      WingJoint2.setTextureSize(512, 128);
-      WingJoint2.mirror = true;
-      setRotation(WingJoint2, -2.416618F, 0F, 0F);
-      Belly = new ModelRenderer(this, 111, 0);
-      Belly.addBox(-8F, 0F, 0F, 16, 3, 30);
-      Belly.setRotationPoint(0F, 10F, -12F);
-      Belly.setTextureSize(512, 128);
-      Belly.mirror = true;
-      setRotation(Belly, 0F, 0F, 0F);
-      Body1 = new ModelRenderer(this, 230, 0);
-      Body1.addBox(-10F, 0F, 0F, 20, 5, 32);
-      Body1.setRotationPoint(0F, 5F, -14F);
-      Body1.setTextureSize(512, 128);
-      Body1.mirror = true;
-      setRotation(Body1, 0F, 0F, 0F);
-      Body2 = new ModelRenderer(this, 340, 0);
-      Body2.addBox(-8F, 0F, 0F, 16, 4, 28);
-      Body2.setRotationPoint(0F, 1F, -11F);
-      Body2.setTextureSize(512, 128);
-      Body2.mirror = true;
-      setRotation(Body2, 0F, 0F, 0F);
-      Body3 = new ModelRenderer(this, 430, 0);
-      Body3.addBox(-5F, 0F, 0F, 10, 2, 28);
-      Body3.setRotationPoint(0F, -1F, -12F);
-      Body3.setTextureSize(512, 128);
-      Body3.mirror = true;
-      setRotation(Body3, 0F, 0F, 0F);
-      Rear = new ModelRenderer(this, 0, 40);
-      Rear.addBox(-6F, -5F, 0F, 12, 10, 5);
-      Rear.setRotationPoint(0F, 7F, 16F);
-      Rear.setTextureSize(512, 128);
-      Rear.mirror = true;
-      setRotation(Rear, -0.1115358F, 0F, 0F);
-      Spine1 = new ModelRenderer(this, 205, 15);
-      Spine1.addBox(-0.5F, 0F, 0F, 1, 4, 3);
-      Spine1.setRotationPoint(0F, 0F, -11F);
-      Spine1.setTextureSize(512, 128);
-      Spine1.mirror = true;
-      setRotation(Spine1, -2.416618F, 0F, 0F);
-      Spine2 = new ModelRenderer(this, 205, 15);
-      Spine2.addBox(-0.5F, 0F, 0F, 1, 4, 4);
-      Spine2.setRotationPoint(0F, 0F, -4F);
-      Spine2.setTextureSize(512, 128);
-      Spine2.mirror = true;
-      setRotation(Spine2, -2.416618F, 0F, 0F);
-      Spine3 = new ModelRenderer(this, 205, 15);
-      Spine3.addBox(-0.5F, 0F, 0F, 1, 4, 4);
-      Spine3.setRotationPoint(0F, 0F, 2F);
-      Spine3.setTextureSize(512, 128);
-      Spine3.mirror = true;
-      setRotation(Spine3, -2.416618F, 0F, 0F);
-      Spine4 = new ModelRenderer(this, 205, 15);
-      Spine4.addBox(-0.5F, 0F, 0F, 1, 4, 4);
-      Spine4.setRotationPoint(0F, 0F, 8F);
-      Spine4.setTextureSize(512, 128);
-      Spine4.mirror = true;
-      setRotation(Spine4, -2.416618F, 0F, 0F);
-      Spine5 = new ModelRenderer(this, 205, 15);
-      Spine5.addBox(-0.5F, 0F, 0F, 1, 4, 4);
-      Spine5.setRotationPoint(0F, 0F, 14F);
-      Spine5.setTextureSize(512, 128);
-      Spine5.mirror = true;
-      setRotation(Spine5, -2.416618F, 0F, 0F);
-      Spine6 = new ModelRenderer(this, 205, 15);
-      Spine6.addBox(-0.5F, 0F, 0F, 1, 4, 4);
-      Spine6.setRotationPoint(0F, 3F, 19F);
-      Spine6.setTextureSize(512, 128);
-      Spine6.mirror = true;
-      setRotation(Spine6, -2.974297F, 0F, 0F);
-      SideNeck1 = new ModelRenderer(this, 205, 27);
-      SideNeck1.addBox(0F, 0F, 0F, 1, 4, 3);
-      SideNeck1.setRotationPoint(4F, 1F, -14F);
-      SideNeck1.setTextureSize(512, 128);
-      SideNeck1.mirror = true;
-      setRotation(SideNeck1, 0F, 0F, 0F);
-      SideNeck2 = new ModelRenderer(this, 205, 27);
-      SideNeck2.addBox(-1F, 0F, 0F, 1, 4, 3);
-      SideNeck2.setRotationPoint(-4F, 1F, -14F);
-      SideNeck2.setTextureSize(512, 128);
-      SideNeck2.mirror = true;
-      setRotation(SideNeck2, 0F, 0F, 0F);
-      Neck1 = new ModelRenderer(this, 40, 40);
-      Neck1.addBox(-4F, -3F, 0F, 8, 6, 12);
-      Neck1.setRotationPoint(0F, 3F, -13F);
-      Neck1.setTextureSize(512, 128);
-      Neck1.mirror = true;
-      setRotation(Neck1, 2.565634F, 0F, 0F);
-      Neck2 = new ModelRenderer(this, 85, 40);
-      Neck2.addBox(-3F, -2.5F, 0F, 6, 5, 12);
-      Neck2.setRotationPoint(0F, -2.5F, -22F);
-      Neck2.setTextureSize(512, 128);
-      Neck2.mirror = true;
-      setRotation(Neck2, 2.899932F, 0F, 0F);
-      Head = new ModelRenderer(this, 125, 40);
-      Head.addBox(-2F, -2.5F, 0F, 4, 5, 7);
-      Head.setRotationPoint(0F, -5.5F, -30F);
-      Head.setTextureSize(512, 128);
-      Head.mirror = true;
-      setRotation(Head, 3.141593F, 0F, 0F);
-      UpperJaw = new ModelRenderer(this, 150, 40);
-      UpperJaw.addBox(-2F, -0.5F, 0F, 4, 2, 5);
-      UpperJaw.setRotationPoint(0F, -5F, -35.5F);
-      UpperJaw.setTextureSize(512, 128);
-      UpperJaw.mirror = true;
-      setRotation(UpperJaw, -3.141593F, 0F, 0F);
-      LowerJaw = new ModelRenderer(this, 150, 50);
-      LowerJaw.addBox(-1.5F, -0.5F, 0F, 3, 1, 7);
-      LowerJaw.setRotationPoint(0F, -3.5F, -35.8F);
-      LowerJaw.setTextureSize(512, 128);
-      LowerJaw.mirror = true;
-      setRotation(LowerJaw, -2.992878F, 0F, 0F);
-      Nose = new ModelRenderer(this, 215, 30);
-      Nose.addBox(-1.5F, -0.5F, 0F, 3, 1, 3);
-      Nose.setRotationPoint(0F, -5F, -40F);
-      Nose.setTextureSize(512, 128);
-      Nose.mirror = true;
-      setRotation(Nose, -2.992878F, 0F, 0F);
-      NoseTop = new ModelRenderer(this, 215, 25);
-      NoseTop.addBox(-1.5F, 0F, 0F, 3, 0, 4);
-      NoseTop.setRotationPoint(0F, -6.4F, -39.3F);
-      NoseTop.setTextureSize(512, 128);
-      NoseTop.mirror = true;
-      setRotation(NoseTop, -2.806985F, 0F, 0F);
-      SideNoseAndFrontTeeth1 = new ModelRenderer(this, 220, 15);
-      SideNoseAndFrontTeeth1.addBox(0F, 0F, 0F, 0, 2, 3);
-      SideNoseAndFrontTeeth1.setRotationPoint(1.4F, -4.2F, -39.5F);
-      SideNoseAndFrontTeeth1.setTextureSize(512, 128);
-      SideNoseAndFrontTeeth1.mirror = true;
-      setRotation(SideNoseAndFrontTeeth1, -2.806978F, 0F, 0F);
-      SideNoseAndFrontTeeth2 = new ModelRenderer(this, 220, 15);
-      SideNoseAndFrontTeeth2.addBox(0F, 0F, 0F, 0, 2, 3);
-      SideNoseAndFrontTeeth2.setRotationPoint(-1.4F, -4.2F, -39.5F);
-      SideNoseAndFrontTeeth2.setTextureSize(512, 128);
-      SideNoseAndFrontTeeth2.mirror = true;
-      setRotation(SideNoseAndFrontTeeth2, -2.806978F, 0F, 0F);
-      BackTeeth1 = new ModelRenderer(this, 75, 30);
-      BackTeeth1.addBox(0F, 0F, 0F, 0, 2, 3);
-      BackTeeth1.setRotationPoint(1.7F, -4F, -37F);
-      BackTeeth1.setTextureSize(512, 128);
-      BackTeeth1.mirror = true;
-      setRotation(BackTeeth1, -3.141593F, 0F, 0F);
-      BackTeeth2 = new ModelRenderer(this, 75, 30);
-      BackTeeth2.addBox(0F, 0F, 0F, 0, 2, 3);
-      BackTeeth2.setRotationPoint(-1.4F, -4F, -37F);
-      BackTeeth2.setTextureSize(512, 128);
-      BackTeeth2.mirror = true;
-      setRotation(BackTeeth2, -3.141593F, 0F, 0F);
-      Eye1 = new ModelRenderer(this, 85, 30);
-      Eye1.addBox(0F, 0F, 0F, 0, 1, 4);
-      Eye1.setRotationPoint(1.9F, -7F, -35.8F);
-      Eye1.setTextureSize(512, 128);
-      Eye1.mirror = true;
-      setRotation(Eye1, -2.769666F, 0.1858931F, -0.4635966F);
-      Eye2 = new ModelRenderer(this, 85, 30);
-      Eye2.addBox(0F, 0F, 0F, 0, 1, 4);
-      Eye2.setRotationPoint(-1.9F, -7F, -35.8F);
-      Eye2.setTextureSize(512, 128);
-      Eye2.mirror = true;
-      setRotation(Eye2, -2.769663F, -0.185895F, 0.4635944F);
-      EyeTop = new ModelRenderer(this, 75, 25);
-      EyeTop.addBox(-1.5F, 0F, 0F, 3, 0, 4);
-      EyeTop.setRotationPoint(0F, -7.6F, -36.7F);
-      EyeTop.setTextureSize(512, 128);
-      EyeTop.mirror = true;
-      setRotation(EyeTop, -2.806985F, 0F, 0F);
-      FaceWeb12 = new ModelRenderer(this, 175, 40);
-      FaceWeb12.addBox(0F, 0F, 0F, 0, 4, 6);
-      FaceWeb12.setRotationPoint(1.9F, -8F, -33F);
-      FaceWeb12.setTextureSize(512, 128);
-      FaceWeb12.mirror = true;
-      setRotation(FaceWeb12, -0.4274136F, 0.2602503F, -0.5379454F);
-      FaceWeb22 = new ModelRenderer(this, 175, 40);
-      FaceWeb22.addBox(0F, 0F, 0F, 0, 4, 6);
-      FaceWeb22.setRotationPoint(-1.9F, -8F, -33F);
-      FaceWeb22.setTextureSize(512, 128);
-      FaceWeb22.mirror = true;
-      setRotation(FaceWeb22, -0.4274136F, -0.260246F, 0.5379454F);
-      FaceWeb11 = new ModelRenderer(this, 190, 40);
-      FaceWeb11.addBox(0F, 0F, 0F, 0, 4, 6);
-      FaceWeb11.setRotationPoint(3.9F, -6F, -29F);
-      FaceWeb11.setTextureSize(512, 128);
-      FaceWeb11.mirror = true;
-      setRotation(FaceWeb11, -2.769666F, 0.2602503F, -0.5379454F);
-      FaceWeb21 = new ModelRenderer(this, 190, 40);
-      FaceWeb21.addBox(0F, 0F, 0F, 0, 4, 6);
-      FaceWeb21.setRotationPoint(-3.9F, -6F, -29F);
-      FaceWeb21.setTextureSize(512, 128);
-      FaceWeb21.mirror = true;
-      setRotation(FaceWeb21, -2.769663F, -0.260246F, 0.5379454F);
-      FaceWebMiddle = new ModelRenderer(this, 190, 35);
-      FaceWebMiddle.addBox(0F, 0F, 0F, 4, 0, 4);
-      FaceWebMiddle.setRotationPoint(0F, -7F, -33F);
-      FaceWebMiddle.setTextureSize(512, 128);
-      FaceWebMiddle.mirror = true;
-      setRotation(FaceWebMiddle, 0.2602449F, -0.7482196F, -0.2504393F);
-      UpperLeg21 = new ModelRenderer(this, 205, 40);
-      UpperLeg21.addBox(-1.5F, -2F, 0F, 3, 4, 10);
-      UpperLeg21.setRotationPoint(-8.5F, 11F, -13F);
-      UpperLeg21.setTextureSize(512, 128);
-      UpperLeg21.mirror = true;
-      setRotation(UpperLeg21, -0.8179311F, 0F, 0F);
-      LowerLeg21 = new ModelRenderer(this, 235, 40);
-      LowerLeg21.addBox(-1.5F, -10F, -2F, 3, 3, 9);
-      LowerLeg21.setRotationPoint(-8.5F, 11F, -13F);
-      LowerLeg21.setTextureSize(512, 128);
-      LowerLeg21.mirror = true;
-      setRotation(LowerLeg21, -2.416618F, 0F, 0F);
-      FootBase21 = new ModelRenderer(this, 260, 40);
-      FootBase21.addBox(-1.5F, 11F, -5F, 3, 1, 7);
-      FootBase21.setRotationPoint(-8.5F, 11F, -13F);
-      FootBase21.setTextureSize(512, 128);
-      FootBase21.mirror = true;
-      setRotation(FootBase21, 0F, 0F, 0F);
-      FootTop21 = new ModelRenderer(this, 260, 50);
-      FootTop21.addBox(-1.5F, 10F, -3F, 3, 1, 5);
-      FootTop21.setRotationPoint(-8.5F, 11F, -13F);
-      FootTop21.setTextureSize(512, 128);
-      FootTop21.mirror = true;
-      setRotation(FootTop21, 0F, 0F, 0F);
-      UpperLeg11 = new ModelRenderer(this, 205, 40);
-      UpperLeg11.addBox(-1.5F, -2F, 0F, 3, 4, 10);
-      UpperLeg11.setRotationPoint(8.5F, 11F, -13F);
-      UpperLeg11.setTextureSize(512, 128);
-      UpperLeg11.mirror = true;
-      setRotation(UpperLeg11, -0.8179311F, 0F, 0F);
-      LowerLeg11 = new ModelRenderer(this, 235, 40);
-      LowerLeg11.addBox(-1.5F, -10F, -2F, 3, 3, 9);
-      LowerLeg11.setRotationPoint(8.5F, 11F, -13F);
-      LowerLeg11.setTextureSize(512, 128);
-      LowerLeg11.mirror = true;
-      setRotation(LowerLeg11, -2.416618F, 0F, 0F);
-      FootBase11 = new ModelRenderer(this, 260, 40);
-      FootBase11.addBox(-1.5F, 11F, -5F, 3, 1, 7);
-      FootBase11.setRotationPoint(8.5F, 11F, -13F);
-      FootBase11.setTextureSize(512, 128);
-      FootBase11.mirror = true;
-      setRotation(FootBase11, 0F, 0F, 0F);
-      FootTop11 = new ModelRenderer(this, 260, 50);
-      FootTop11.addBox(-1.5F, 10F, -3F, 3, 1, 5);
-      FootTop11.setRotationPoint(8.5F, 11F, -13F);
-      FootTop11.setTextureSize(512, 128);
-      FootTop11.mirror = true;
-      setRotation(FootTop11, 0F, 0F, 0F);
-      UpperLeg12 = new ModelRenderer(this, 285, 40);
-      UpperLeg12.addBox(-2F, -2.5F, -10F, 4, 5, 10);
-      UpperLeg12.setRotationPoint(10F, 10F, 15.5F);
-      UpperLeg12.setTextureSize(512, 128);
-      UpperLeg12.mirror = true;
-      setRotation(UpperLeg12, 1.101889F, 0F, 0F);
-      LowerLeg12 = new ModelRenderer(this, 320, 40);
-      LowerLeg12.addBox(-1.5F, 5F, -2F, 3, 4, 11);
-      LowerLeg12.setRotationPoint(10F, 10F, 15.5F);
-      LowerLeg12.setTextureSize(512, 128);
-      LowerLeg12.mirror = true;
-      setRotation(LowerLeg12, -0.4786337F, 0F, 0F);
-      FootBase12 = new ModelRenderer(this, 350, 40);
-      FootBase12.addBox(-1.5F, 12F, -4F, 3, 1, 9);
-      FootBase12.setRotationPoint(10F, 10F, 15.5F);
-      FootBase12.setTextureSize(512, 128);
-      FootBase12.mirror = true;
-      setRotation(FootBase12, 0F, 0F, 0F);
-      FootTop12 = new ModelRenderer(this, 350, 51);
-      FootTop12.addBox(-1.5F, 11F, -2F, 3, 1, 7);
-      FootTop12.setRotationPoint(10F, 10F, 15.5F);
-      FootTop12.setTextureSize(512, 128);
-      FootTop12.mirror = true;
-      setRotation(FootTop12, 0F, 0F, 0F);
-      UpperLeg22 = new ModelRenderer(this, 285, 40);
-      UpperLeg22.addBox(-2F, -2.5F, -10F, 4, 5, 10);
-      UpperLeg22.setRotationPoint(-10F, 10F, 15.5F);
-      UpperLeg22.setTextureSize(512, 128);
-      UpperLeg22.mirror = true;
-      setRotation(UpperLeg22, 1.101896F, 0F, 0F);
-      LowerLeg22 = new ModelRenderer(this, 320, 40);
-      LowerLeg22.addBox(-1.5F, 6F, -2F, 3, 4, 11);
-      LowerLeg22.setRotationPoint(-10F, 10F, 15.5F);
-      LowerLeg22.setTextureSize(512, 128);
-      LowerLeg22.mirror = true;
-      setRotation(LowerLeg22, -0.4786337F, 0F, 0F);
-      FootBase22 = new ModelRenderer(this, 350, 40);
-      FootBase22.addBox(-1.5F, 12F, -4F, 3, 1, 9);
-      FootBase22.setRotationPoint(-10F, 10F, 15.5F);
-      FootBase22.setTextureSize(512, 128);
-      FootBase22.mirror = true;
-      setRotation(FootBase22, 0F, 0F, 0F);
-      FootTop22 = new ModelRenderer(this, 350, 51);
-      FootTop22.addBox(-1.5F, 11F, -2F, 3, 1, 7);
-      FootTop22.setRotationPoint(-10F, 10F, 15.5F);
-      FootTop22.setTextureSize(512, 128);
-      FootTop22.mirror = true;
-      setRotation(FootTop22, 0F, 0F, 0F);
-      WingMidBone2 = new ModelRenderer(this, 230, 100);
-      WingMidBone2.addBox(-0.5F, -0.5F, 0F, 1, 0, 24);
-      WingMidBone2.setRotationPoint(26F, 2.5F, -11F);
-      WingMidBone2.setTextureSize(512, 128);
-      WingMidBone2.mirror = true;
-      setRotation(WingMidBone2, 0F, 0F, 0F);
-      WingWeb12 = new ModelRenderer(this, 390, 36);
-      WingWeb12.addBox(0F, 0F, -3F, 18, 0, 24);
-      WingWeb12.setRotationPoint(8F, 2F, -8F);
-      WingWeb12.setTextureSize(512, 128);
-      WingWeb12.mirror = true;
-      setRotation(WingWeb12, 0F, 0F, 0F);
-      WingWeb21 = new ModelRenderer(this, 0, 93);
-      WingWeb21.addBox(-31F, 0F, 0F, 31, 0, 25);
-      WingWeb21.setRotationPoint(-26F, 2F, -11F);
-      WingWeb21.setTextureSize(512, 128);
-      WingWeb21.mirror = true;
-      setRotation(WingWeb21, 0F, 0F, 0F);
-      Tail1 = new ModelRenderer(this, 0, 0);
-      Tail1.addBox(-4F, 0F, 0F, 8, 6, 11);
-      Tail1.setRotationPoint(0F, 3F, 17F);
-      Tail1.setTextureSize(512, 128);
-      Tail1.mirror = true;
-      setRotation(Tail1, -0.5055611F, 0F, 0F);
-      Tail2 = new ModelRenderer(this, 40, 0);
-      Tail2.addBox(-2.5F, -2.5F, 0F, 5, 5, 10);
-      Tail2.setRotationPoint(0F, 10.96667F, 24F);
-      Tail2.setTextureSize(512, 128);
-      Tail2.mirror = true;
-      setRotation(Tail2, -0.463431F, 0F, 0F);
-      Tail3 = new ModelRenderer(this, 75, 0);
-      Tail3.addBox(-2F, -2F, 0F, 4, 4, 11);
-      Tail3.setRotationPoint(0F, 15F, 32F);
-      Tail3.setTextureSize(512, 128);
-      Tail3.mirror = true;
-      setRotation(Tail3, -0.6740814F, 0F, 0F);
-      Tail4 = new ModelRenderer(this, 0, 19);
-      Tail4.addBox(-1.5F, -1.5F, 0F, 3, 3, 6);
-      Tail4.setRotationPoint(0F, 21F, 39F);
-      Tail4.setTextureSize(512, 128);
-      Tail4.mirror = true;
-      setRotation(Tail4, -0.4213009F, 0F, 0F);
-      Tail5 = new ModelRenderer(this, 20, 19);
-      Tail5.addBox(-1F, -1F, 0F, 2, 2, 5);
-      Tail5.setRotationPoint(0F, 23F, 44F);
-      Tail5.setTextureSize(512, 128);
-      Tail5.mirror = true;
-      setRotation(Tail5, -0.2106504F, 0F, 0F);
-      Tail6 = new ModelRenderer(this, 0, 31);
-      Tail6.addBox(-0.5F, -0.5F, 0F, 1, 1, 5);
-      Tail6.setRotationPoint(0F, 24F, 48F);
-      Tail6.setTextureSize(512, 128);
-      Tail6.mirror = true;
-      setRotation(Tail6, -0.2106504F, 0F, 0F);
-  }
-  
-	public void render(Entity entity, float f, float f1, float f2, float f3,
-			float f4, float f5) {
-		super.render(entity, f, f1, f2, f3, f4, f5);
+public class ModelRSDragon extends ModelBase {
+	private final ModelRenderer WingWeb11;
+	private final ModelRenderer WingWeb22;
+	private final ModelRenderer WingMidBone1;
+	private final ModelRenderer WingJoint1;
+	private final ModelRenderer WingJoint2;
+	private final ModelRenderer Belly;
+	private final ModelRenderer Body1;
+	private final ModelRenderer Body2;
+	private final ModelRenderer Body3;
+	private final ModelRenderer Rear;
+	private final ModelRenderer Spine1;
+	private final ModelRenderer Spine2;
+	private final ModelRenderer Spine3;
+	private final ModelRenderer Spine4;
+	private final ModelRenderer Spine5;
+	private final ModelRenderer Spine6;
+	private final ModelRenderer SideNeck1;
+	private final ModelRenderer SideNeck2;
+	private final ModelRenderer Neck1;
+	private final ModelRenderer Neck2;
+	private final ModelRenderer Head;
+	private final ModelRenderer UpperJaw;
+	private final ModelRenderer LowerJaw;
+	private final ModelRenderer Nose;
+	private final ModelRenderer NoseTop;
+	private final ModelRenderer SideNoseAndFrontTeeth1;
+	private final ModelRenderer SideNoseAndFrontTeeth2;
+	private final ModelRenderer BackTeeth1;
+	private final ModelRenderer BackTeeth2;
+	private final ModelRenderer Eye1;
+	private final ModelRenderer Eye2;
+	private final ModelRenderer EyeTop;
+	private final ModelRenderer FaceWeb12;
+	private final ModelRenderer FaceWeb22;
+	private final ModelRenderer FaceWeb11;
+	private final ModelRenderer FaceWeb21;
+	private final ModelRenderer FaceWebMiddle;
+	private final ModelRenderer UpperLeg21;
+	private final ModelRenderer LowerLeg21;
+	private final ModelRenderer FootBase21;
+	private final ModelRenderer FootTop21;
+	private final ModelRenderer UpperLeg11;
+	private final ModelRenderer LowerLeg11;
+	private final ModelRenderer FootBase11;
+	private final ModelRenderer FootTop11;
+	private final ModelRenderer UpperLeg12;
+	private final ModelRenderer LowerLeg12;
+	private final ModelRenderer FootBase12;
+	private final ModelRenderer FootTop12;
+	private final ModelRenderer UpperLeg22;
+	private final ModelRenderer LowerLeg22;
+	private final ModelRenderer FootBase22;
+	private final ModelRenderer FootTop22;
+	private final ModelRenderer WingMidBone2;
+	private final ModelRenderer WingWeb12;
+	private final ModelRenderer WingWeb21;
+	private final ModelRenderer Tail1;
+	private final ModelRenderer Tail2;
+	private final ModelRenderer Tail3;
+	private final ModelRenderer Tail4;
+	private final ModelRenderer Tail5;
+	private final ModelRenderer Tail6;
 
-		if (entity instanceof EntityRSGhast) {
-			EntityRSGhast dr = (EntityRSGhast) entity;
-			GL11.glPushMatrix();
-			WingWeb22.rotateAngleZ = MathHelper.cos((float) (dr.getAnimateTimer() * Math.PI / 30.0));
-			WingWeb22.render(f5);
-			WingWeb22.postRender(f5);
-			GL11.glTranslatef(-WingWeb22.rotationPointX * f5,-WingWeb22.rotationPointY * f5, -WingWeb22.rotationPointZ* f5);
-			//WingMidBone2.render(f5);
-			WingWeb21.rotateAngleZ = MathHelper.cos((float) (dr.getAnimateTimer() * Math.PI / 30.0)) / 2.0f;
-			WingWeb21.render(f5);
-			GL11.glPopMatrix();
+	public ModelRSDragon() {
+		textureWidth = 512;
+		textureHeight = 128;
 
-			GL11.glPushMatrix();
-			WingWeb12.rotateAngleZ = -MathHelper.cos((float) (dr.getAnimateTimer() * Math.PI / 30.0));
-			WingWeb12.render(f5);
-			WingWeb12.postRender(f5);
-			GL11.glTranslatef(-WingWeb12.rotationPointX * f5,-WingWeb12.rotationPointY * f5, -WingWeb12.rotationPointZ* f5);
-			//WingMidBone1.render(f5);
-			WingWeb11.rotateAngleZ = -MathHelper.cos((float) (dr.getAnimateTimer() * Math.PI / 30.0)) / 2.0f;
-			WingWeb11.render(f5);
-			GL11.glPopMatrix();
+		WingWeb11 = new ModelRenderer(this);
+		WingWeb11.setRotationPoint(26.0F, 2.0F, -11.0F);
+		WingWeb11.cubeList.add(new ModelBox(WingWeb11, 113, 97, 0.0F, 0.0F, 0.0F, 31, 0, 25, 0.0F, true));
 
-			WingJoint1.render(f5);
-			WingJoint2.render(f5);
-			Belly.render(f5);
-			Body1.render(f5);
-			Body2.render(f5);
-			Body3.render(f5);
-			Rear.render(f5);
-			Spine1.render(f5);
-			Spine2.render(f5);
-			Spine3.render(f5);
-			Spine4.render(f5);
-			Spine5.render(f5);
-			Spine6.render(f5);
-			SideNeck1.render(f5);
-			SideNeck2.render(f5);
-			Neck1.render(f5);
-			Neck2.render(f5);
-			Head.render(f5);
-			UpperJaw.render(f5);
-			LowerJaw.render(f5);
-			Nose.render(f5);
-			NoseTop.render(f5);
-			SideNoseAndFrontTeeth1.render(f5);
-			SideNoseAndFrontTeeth2.render(f5);
-			BackTeeth1.render(f5);
-			BackTeeth2.render(f5);
-			Eye1.render(f5);
-			Eye2.render(f5);
-			EyeTop.render(f5);
-			FaceWeb12.render(f5);
-			FaceWeb22.render(f5);
-			FaceWeb11.render(f5);
-			FaceWeb21.render(f5);
-			FaceWebMiddle.render(f5);
-			UpperLeg21.render(f5);
-			LowerLeg21.render(f5);
-			FootBase21.render(f5);
-			FootTop21.render(f5);
-			UpperLeg11.render(f5);
-			LowerLeg11.render(f5);
-			FootBase11.render(f5);
-			FootTop11.render(f5);
-			UpperLeg12.render(f5);
-			LowerLeg12.render(f5);
-			FootBase12.render(f5);
-			FootTop12.render(f5);
-			UpperLeg22.render(f5);
-			LowerLeg22.render(f5);
-			FootBase22.render(f5);
-			FootTop22.render(f5);
-			
-			setRotationLeg12X(1.0f);
-			setRotationLeg22X(1.0f);
-			
-			setRotationLeg11X(1.0f);
-			setRotationLeg21X(1.0f);
-			
-			GL11.glPushMatrix();
-			Tail1.rotateAngleX = -0.5055611F + MathHelper.cos((float) (dr.getAnimateTimer() * Math.PI / 30.0)) / 4.0f;
-			Tail1.render(f5);
-			Tail1.rotateAngleX = MathHelper.cos((float) ((dr.getAnimateTimer()) * Math.PI / 30.0)) / 4.0f;
-			Tail1.postRender(f5);
-			GL11.glTranslatef(-Tail1.rotationPointX * f5,-Tail1.rotationPointY * f5, -Tail1.rotationPointZ* f5);
-			Tail2.rotateAngleX = -0.463431F + MathHelper.cos((float) ((dr.getAnimateTimer() + 2) * Math.PI / 30.0)) / 3.0f;
-			Tail2.render(f5);
-			Tail2.rotateAngleX = MathHelper.cos((float) ((dr.getAnimateTimer() + 2) * Math.PI / 30.0)) / 3.0f;
-			Tail2.postRender(f5);
-			GL11.glTranslatef(-Tail2.rotationPointX * f5,-Tail2.rotationPointY * f5, -Tail2.rotationPointZ* f5);
-			Tail3.rotateAngleX = -0.6740814F + MathHelper.cos((float) ((dr.getAnimateTimer() + 4) * Math.PI / 30.0)) / 2.8f;
-			Tail3.render(f5);
-			Tail3.rotateAngleX = MathHelper.cos((float) ((dr.getAnimateTimer() + 4) * Math.PI / 30.0)) / 2.8f;
-			Tail3.postRender(f5);
-			GL11.glTranslatef(-Tail3.rotationPointX * f5,-Tail3.rotationPointY * f5, -Tail3.rotationPointZ* f5);
-			Tail4.rotateAngleX = -0.4213009F + MathHelper.cos((float) ((dr.getAnimateTimer() + 6) * Math.PI / 30.0)) / 2.4f;
-			Tail4.render(f5);
-			Tail4.rotateAngleX = MathHelper.cos((float) ((dr.getAnimateTimer() + 6) * Math.PI / 30.0)) / 2.4f;
-			Tail4.postRender(f5);
-			GL11.glTranslatef(-Tail4.rotationPointX * f5,-Tail4.rotationPointY * f5, -Tail4.rotationPointZ* f5);
-			Tail5.rotateAngleX = -0.2106504F + MathHelper.cos((float) ((dr.getAnimateTimer() + 8) * Math.PI / 30.0)) / 2.2f;
-			Tail5.render(f5);
-			Tail5.rotateAngleX = MathHelper.cos((float) ((dr.getAnimateTimer() + 8) * Math.PI / 30.0)) / 2.2f;
-			Tail5.postRender(f5);
-			GL11.glTranslatef(-Tail5.rotationPointX * f5,-Tail5.rotationPointY * f5, -Tail5.rotationPointZ* f5);
-			Tail6.rotateAngleX = -0.2106504F + MathHelper.cos((float) ((dr.getAnimateTimer() + 10) * Math.PI / 30.0)) / 2.0f;
-			Tail6.render(f5);
-			Tail6.rotateAngleX = MathHelper.cos((float) ((dr.getAnimateTimer() + 10) * Math.PI / 30.0)) / 2.0f;
-			Tail6.postRender(f5);
-			GL11.glTranslatef(-Tail6.rotationPointX * f5,-Tail6.rotationPointY * f5, -Tail6.rotationPointZ* f5);
-			
-			GL11.glPopMatrix();
-		} else {
-			setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-			GL11.glPushMatrix();
-			WingWeb22.rotateAngleZ = 0F;
-			WingWeb22.render(f5);
-			WingWeb22.postRender(f5);
-			GL11.glTranslatef(-WingWeb22.rotationPointX * f5,-WingWeb22.rotationPointY * f5, -WingWeb22.rotationPointZ* f5);
-			//WingMidBone2.render(f5);
-			WingWeb21.rotateAngleZ = 0F;
-			WingWeb21.render(f5);
-			GL11.glPopMatrix();
+		WingWeb22 = new ModelRenderer(this);
+		WingWeb22.setRotationPoint(-8.0F, 2.0F, -8.0F);
+		WingWeb22.cubeList.add(new ModelBox(WingWeb22, 390, 65, -18.0F, 0.0F, -3.0F, 18, 0, 24, 0.0F, true));
 
-			GL11.glPushMatrix();
-			WingWeb12.rotateAngleZ = 0F;
-			WingWeb12.render(f5);
-			WingWeb12.postRender(f5);
-			GL11.glTranslatef(-WingWeb12.rotationPointX * f5,-WingWeb12.rotationPointY * f5, -WingWeb12.rotationPointZ* f5);
-			//WingMidBone1.render(f5);
-			WingWeb11.rotateAngleZ = 0F;
-			WingWeb11.render(f5);
-			GL11.glPopMatrix();
-			
-			WingJoint1.render(f5);
-			WingJoint2.render(f5);
-			Belly.render(f5);
-			Body1.render(f5);
-			Body2.render(f5);
-			Body3.render(f5);
-			Rear.render(f5);
-			Spine1.render(f5);
-			Spine2.render(f5);
-			Spine3.render(f5);
-			Spine4.render(f5);
-			Spine5.render(f5);
-			Spine6.render(f5);
-			SideNeck1.render(f5);
-			SideNeck2.render(f5);
-			Neck1.render(f5);
-			Neck2.render(f5);
-			Head.render(f5);
-			UpperJaw.render(f5);
-			LowerJaw.render(f5);
-			Nose.render(f5);
-			NoseTop.render(f5);
-			SideNoseAndFrontTeeth1.render(f5);
-			SideNoseAndFrontTeeth2.render(f5);
-			BackTeeth1.render(f5);
-			BackTeeth2.render(f5);
-			Eye1.render(f5);
-			Eye2.render(f5);
-			EyeTop.render(f5);
-			FaceWeb12.render(f5);
-			FaceWeb22.render(f5);
-			FaceWeb11.render(f5);
-			FaceWeb21.render(f5);
-			FaceWebMiddle.render(f5);
-			UpperLeg21.render(f5);
-			LowerLeg21.render(f5);
-			FootBase21.render(f5);
-			FootTop21.render(f5);
-			UpperLeg11.render(f5);
-			LowerLeg11.render(f5);
-			FootBase11.render(f5);
-			FootTop11.render(f5);
-			UpperLeg12.render(f5);
-			LowerLeg12.render(f5);
-			FootBase12.render(f5);
-			FootTop12.render(f5);
-			UpperLeg22.render(f5);
-			LowerLeg22.render(f5);
-			FootBase22.render(f5);
-			FootTop22.render(f5);
-			Tail1.render(f5);
-			Tail2.render(f5);
-			Tail3.render(f5);
-			Tail4.render(f5);
-			Tail5.render(f5);
-			Tail6.render(f5);
-		}
-	}
-  
-  private void setRotation(ModelRenderer model, float x, float y, float z)
-  {
-    model.rotateAngleX = x;
-    model.rotateAngleY = y;
-    model.rotateAngleZ = z;
-  }
-  
-	private void setRotationLeg21X(float x) {
-		UpperLeg21.rotateAngleX = -0.8179311F + x;
-		LowerLeg21.rotateAngleX = -2.416618F + x;
-		FootTop21.rotateAngleX = x;
-		FootBase21.rotateAngleX = x;
+		WingMidBone1 = new ModelRenderer(this);
+		WingMidBone1.setRotationPoint(-26.0F, 2.5F, -11.0F);
+		WingMidBone1.cubeList.add(new ModelBox(WingMidBone1, 285, 100, -0.5F, -0.5F, 0.0F, 1, 0, 24, 0.0F, true));
+
+		WingJoint1 = new ModelRenderer(this);
+		WingJoint1.setRotationPoint(8.5F, 3.0F, -3.0F);
+		setRotationAngle(WingJoint1, -2.4166F, 0.0F, 0.0F);
+		WingJoint1.cubeList.add(new ModelBox(WingJoint1, 205, 0, -1.5F, 0.0F, 0.0F, 3, 4, 8, 0.0F, true));
+
+		WingJoint2 = new ModelRenderer(this);
+		WingJoint2.setRotationPoint(-8.0F, 4.0F, -8.0F);
+		setRotationAngle(WingJoint2, -2.4166F, 0.0F, 0.0F);
+		WingJoint2.cubeList.add(new ModelBox(WingJoint2, 205, 0, -2.0F, -3.0F, -5.0F, 3, 4, 8, 0.0F, true));
+
+		Belly = new ModelRenderer(this);
+		Belly.setRotationPoint(0.0F, 10.0F, -12.0F);
+		Belly.cubeList.add(new ModelBox(Belly, 111, 0, -8.0F, 0.0F, 0.0F, 16, 3, 30, 0.0F, true));
+
+		Body1 = new ModelRenderer(this);
+		Body1.setRotationPoint(0.0F, 5.0F, -14.0F);
+		Body1.cubeList.add(new ModelBox(Body1, 230, 0, -10.0F, 0.0F, 0.0F, 20, 5, 32, 0.0F, true));
+
+		Body2 = new ModelRenderer(this);
+		Body2.setRotationPoint(0.0F, 1.0F, -11.0F);
+		Body2.cubeList.add(new ModelBox(Body2, 340, 0, -8.0F, 0.0F, 0.0F, 16, 4, 28, 0.0F, true));
+
+		Body3 = new ModelRenderer(this);
+		Body3.setRotationPoint(0.0F, -1.0F, -12.0F);
+		Body3.cubeList.add(new ModelBox(Body3, 430, 0, -5.0F, 0.0F, 0.0F, 10, 2, 28, 0.0F, true));
+
+		Rear = new ModelRenderer(this);
+		Rear.setRotationPoint(0.0F, 7.0F, 16.0F);
+		setRotationAngle(Rear, -0.1115F, 0.0F, 0.0F);
+		Rear.cubeList.add(new ModelBox(Rear, 0, 40, -6.0F, -5.0F, 0.0F, 12, 10, 5, 0.0F, true));
+
+		Spine1 = new ModelRenderer(this);
+		Spine1.setRotationPoint(0.0F, 0.0F, -11.0F);
+		setRotationAngle(Spine1, -2.4166F, 0.0F, 0.0F);
+		Spine1.cubeList.add(new ModelBox(Spine1, 205, 15, -0.5F, 0.0F, 0.0F, 1, 4, 3, 0.0F, true));
+
+		Spine2 = new ModelRenderer(this);
+		Spine2.setRotationPoint(0.0F, 0.0F, -4.0F);
+		setRotationAngle(Spine2, -2.4166F, 0.0F, 0.0F);
+		Spine2.cubeList.add(new ModelBox(Spine2, 205, 15, -0.5F, 0.0F, 0.0F, 1, 4, 4, 0.0F, true));
+
+		Spine3 = new ModelRenderer(this);
+		Spine3.setRotationPoint(0.0F, 0.0F, 2.0F);
+		setRotationAngle(Spine3, -2.4166F, 0.0F, 0.0F);
+		Spine3.cubeList.add(new ModelBox(Spine3, 205, 15, -0.5F, 0.0F, 0.0F, 1, 4, 4, 0.0F, true));
+
+		Spine4 = new ModelRenderer(this);
+		Spine4.setRotationPoint(0.0F, 0.0F, 8.0F);
+		setRotationAngle(Spine4, -2.4166F, 0.0F, 0.0F);
+		Spine4.cubeList.add(new ModelBox(Spine4, 205, 15, -0.5F, 0.0F, 0.0F, 1, 4, 4, 0.0F, true));
+
+		Spine5 = new ModelRenderer(this);
+		Spine5.setRotationPoint(0.0F, 0.0F, 14.0F);
+		setRotationAngle(Spine5, -2.4166F, 0.0F, 0.0F);
+		Spine5.cubeList.add(new ModelBox(Spine5, 205, 15, -0.5F, 0.0F, 0.0F, 1, 4, 4, 0.0F, true));
+
+		Spine6 = new ModelRenderer(this);
+		Spine6.setRotationPoint(0.0F, 3.0F, 19.0F);
+		setRotationAngle(Spine6, -2.9743F, 0.0F, 0.0F);
+		Spine6.cubeList.add(new ModelBox(Spine6, 205, 15, -0.5F, 0.0F, 0.0F, 1, 4, 4, 0.0F, true));
+
+		SideNeck1 = new ModelRenderer(this);
+		SideNeck1.setRotationPoint(4.0F, 1.0F, -14.0F);
+		SideNeck1.cubeList.add(new ModelBox(SideNeck1, 205, 27, 0.0F, 0.0F, 0.0F, 1, 4, 3, 0.0F, true));
+
+		SideNeck2 = new ModelRenderer(this);
+		SideNeck2.setRotationPoint(-4.0F, 1.0F, -14.0F);
+		SideNeck2.cubeList.add(new ModelBox(SideNeck2, 205, 27, -1.0F, 0.0F, 0.0F, 1, 4, 3, 0.0F, true));
+
+		Neck1 = new ModelRenderer(this);
+		Neck1.setRotationPoint(0.0F, 3.0F, -13.0F);
+		setRotationAngle(Neck1, 2.5656F, 0.0F, 0.0F);
+		Neck1.cubeList.add(new ModelBox(Neck1, 40, 40, -4.0F, -3.0F, 0.0F, 8, 6, 12, 0.0F, true));
+
+		Neck2 = new ModelRenderer(this);
+		Neck2.setRotationPoint(0.0F, -2.5F, -22.0F);
+		setRotationAngle(Neck2, 2.8999F, 0.0F, 0.0F);
+		Neck2.cubeList.add(new ModelBox(Neck2, 85, 40, -3.0F, -2.5F, 0.0F, 6, 5, 12, 0.0F, true));
+
+		Head = new ModelRenderer(this);
+		Head.setRotationPoint(0.0F, -5.5F, -30.0F);
+		setRotationAngle(Head, 3.1416F, 0.0F, 0.0F);
+		Head.cubeList.add(new ModelBox(Head, 125, 40, -2.0F, -2.5F, 0.0F, 4, 5, 7, 0.0F, true));
+
+		UpperJaw = new ModelRenderer(this);
+		UpperJaw.setRotationPoint(0.0F, -5.0F, -35.5F);
+		setRotationAngle(UpperJaw, -3.1416F, 0.0F, 0.0F);
+		UpperJaw.cubeList.add(new ModelBox(UpperJaw, 150, 40, -2.0F, -0.5F, 0.0F, 4, 2, 5, 0.0F, true));
+
+		LowerJaw = new ModelRenderer(this);
+		LowerJaw.setRotationPoint(0.0F, -3.5F, -35.8F);
+		setRotationAngle(LowerJaw, -2.9929F, 0.0F, 0.0F);
+		LowerJaw.cubeList.add(new ModelBox(LowerJaw, 150, 50, -1.5F, -0.5F, 0.0F, 3, 1, 7, 0.0F, true));
+
+		Nose = new ModelRenderer(this);
+		Nose.setRotationPoint(0.0F, -5.0F, -40.0F);
+		setRotationAngle(Nose, -2.9929F, 0.0F, 0.0F);
+		Nose.cubeList.add(new ModelBox(Nose, 215, 30, -1.5F, -0.5F, 0.0F, 3, 1, 3, 0.0F, true));
+
+		NoseTop = new ModelRenderer(this);
+		NoseTop.setRotationPoint(0.0F, -6.4F, -39.3F);
+		setRotationAngle(NoseTop, -2.807F, 0.0F, 0.0F);
+		NoseTop.cubeList.add(new ModelBox(NoseTop, 215, 25, -1.5F, 0.0F, 0.0F, 3, 0, 4, 0.0F, true));
+
+		SideNoseAndFrontTeeth1 = new ModelRenderer(this);
+		SideNoseAndFrontTeeth1.setRotationPoint(1.4F, -4.2F, -39.5F);
+		setRotationAngle(SideNoseAndFrontTeeth1, -2.807F, 0.0F, 0.0F);
+		SideNoseAndFrontTeeth1.cubeList.add(new ModelBox(SideNoseAndFrontTeeth1, 220, 15, 0.0F, 0.0F, 0.0F, 0, 2, 3, 0.0F, true));
+
+		SideNoseAndFrontTeeth2 = new ModelRenderer(this);
+		SideNoseAndFrontTeeth2.setRotationPoint(-1.4F, -4.2F, -39.5F);
+		setRotationAngle(SideNoseAndFrontTeeth2, -2.807F, 0.0F, 0.0F);
+		SideNoseAndFrontTeeth2.cubeList.add(new ModelBox(SideNoseAndFrontTeeth2, 220, 15, 0.0F, 0.0F, 0.0F, 0, 2, 3, 0.0F, true));
+
+		BackTeeth1 = new ModelRenderer(this);
+		BackTeeth1.setRotationPoint(1.7F, -4.0F, -37.0F);
+		setRotationAngle(BackTeeth1, -3.1416F, 0.0F, 0.0F);
+		BackTeeth1.cubeList.add(new ModelBox(BackTeeth1, 75, 30, 0.0F, 0.0F, 0.0F, 0, 2, 3, 0.0F, true));
+
+		BackTeeth2 = new ModelRenderer(this);
+		BackTeeth2.setRotationPoint(-1.4F, -4.0F, -37.0F);
+		setRotationAngle(BackTeeth2, -3.1416F, 0.0F, 0.0F);
+		BackTeeth2.cubeList.add(new ModelBox(BackTeeth2, 75, 30, 0.0F, 0.0F, 0.0F, 0, 2, 3, 0.0F, true));
+
+		Eye1 = new ModelRenderer(this);
+		Eye1.setRotationPoint(1.9F, -7.0F, -35.8F);
+		setRotationAngle(Eye1, -2.7697F, 0.1859F, -0.4636F);
+		Eye1.cubeList.add(new ModelBox(Eye1, 85, 30, 0.0F, 0.0F, 0.0F, 0, 1, 4, 0.0F, true));
+
+		Eye2 = new ModelRenderer(this);
+		Eye2.setRotationPoint(-1.9F, -7.0F, -35.8F);
+		setRotationAngle(Eye2, -2.7697F, -0.1859F, 0.4636F);
+		Eye2.cubeList.add(new ModelBox(Eye2, 85, 30, 0.0F, 0.0F, 0.0F, 0, 1, 4, 0.0F, true));
+
+		EyeTop = new ModelRenderer(this);
+		EyeTop.setRotationPoint(0.0F, -7.6F, -36.7F);
+		setRotationAngle(EyeTop, -2.807F, 0.0F, 0.0F);
+		EyeTop.cubeList.add(new ModelBox(EyeTop, 75, 25, -1.5F, 0.0F, 0.0F, 3, 0, 4, 0.0F, true));
+
+		FaceWeb12 = new ModelRenderer(this);
+		FaceWeb12.setRotationPoint(1.9F, -8.0F, -33.0F);
+		setRotationAngle(FaceWeb12, -0.4274F, 0.2603F, -0.5379F);
+		FaceWeb12.cubeList.add(new ModelBox(FaceWeb12, 175, 40, 0.0F, 0.0F, 0.0F, 0, 4, 6, 0.0F, true));
+
+		FaceWeb22 = new ModelRenderer(this);
+		FaceWeb22.setRotationPoint(-1.9F, -8.0F, -33.0F);
+		setRotationAngle(FaceWeb22, -0.4274F, -0.2602F, 0.5379F);
+		FaceWeb22.cubeList.add(new ModelBox(FaceWeb22, 175, 40, 0.0F, 0.0F, 0.0F, 0, 4, 6, 0.0F, true));
+
+		FaceWeb11 = new ModelRenderer(this);
+		FaceWeb11.setRotationPoint(3.9F, -6.0F, -29.0F);
+		setRotationAngle(FaceWeb11, -2.7697F, 0.2603F, -0.5379F);
+		FaceWeb11.cubeList.add(new ModelBox(FaceWeb11, 190, 40, 0.0F, 0.0F, 0.0F, 0, 4, 6, 0.0F, true));
+
+		FaceWeb21 = new ModelRenderer(this);
+		FaceWeb21.setRotationPoint(-3.9F, -6.0F, -29.0F);
+		setRotationAngle(FaceWeb21, -2.7697F, -0.2602F, 0.5379F);
+		FaceWeb21.cubeList.add(new ModelBox(FaceWeb21, 190, 40, 0.0F, 0.0F, 0.0F, 0, 4, 6, 0.0F, true));
+
+		FaceWebMiddle = new ModelRenderer(this);
+		FaceWebMiddle.setRotationPoint(0.0F, -7.0F, -33.0F);
+		setRotationAngle(FaceWebMiddle, 0.2602F, -0.7482F, -0.2504F);
+		FaceWebMiddle.cubeList.add(new ModelBox(FaceWebMiddle, 190, 35, 0.0F, 0.0F, 0.0F, 4, 0, 4, 0.0F, true));
+
+		UpperLeg21 = new ModelRenderer(this);
+		UpperLeg21.setRotationPoint(-8.5F, 11.0F, -13.0F);
+		setRotationAngle(UpperLeg21, -0.8179F, 0.0F, 0.0F);
+		UpperLeg21.cubeList.add(new ModelBox(UpperLeg21, 205, 40, -1.5F, -2.0F, 0.0F, 3, 4, 10, 0.0F, true));
+
+		LowerLeg21 = new ModelRenderer(this);
+		LowerLeg21.setRotationPoint(-8.5F, 11.0F, -13.0F);
+		setRotationAngle(LowerLeg21, -2.4166F, 0.0F, 0.0F);
+		LowerLeg21.cubeList.add(new ModelBox(LowerLeg21, 235, 40, -1.5F, -10.0F, -2.0F, 3, 3, 9, 0.0F, true));
+
+		FootBase21 = new ModelRenderer(this);
+		FootBase21.setRotationPoint(-8.5F, 11.0F, -13.0F);
+		FootBase21.cubeList.add(new ModelBox(FootBase21, 260, 40, -1.5F, 11.0F, -5.0F, 3, 1, 7, 0.0F, true));
+
+		FootTop21 = new ModelRenderer(this);
+		FootTop21.setRotationPoint(-8.5F, 11.0F, -13.0F);
+		FootTop21.cubeList.add(new ModelBox(FootTop21, 260, 50, -1.5F, 10.0F, -3.0F, 3, 1, 5, 0.0F, true));
+
+		UpperLeg11 = new ModelRenderer(this);
+		UpperLeg11.setRotationPoint(8.5F, 11.0F, -13.0F);
+		setRotationAngle(UpperLeg11, -0.8179F, 0.0F, 0.0F);
+		UpperLeg11.cubeList.add(new ModelBox(UpperLeg11, 205, 40, -1.5F, -2.0F, 0.0F, 3, 4, 10, 0.0F, true));
+
+		LowerLeg11 = new ModelRenderer(this);
+		LowerLeg11.setRotationPoint(8.5F, 11.0F, -13.0F);
+		setRotationAngle(LowerLeg11, -2.4166F, 0.0F, 0.0F);
+		LowerLeg11.cubeList.add(new ModelBox(LowerLeg11, 235, 40, -1.5F, -10.0F, -2.0F, 3, 3, 9, 0.0F, true));
+
+		FootBase11 = new ModelRenderer(this);
+		FootBase11.setRotationPoint(8.5F, 11.0F, -13.0F);
+		FootBase11.cubeList.add(new ModelBox(FootBase11, 260, 40, -1.5F, 11.0F, -5.0F, 3, 1, 7, 0.0F, true));
+
+		FootTop11 = new ModelRenderer(this);
+		FootTop11.setRotationPoint(8.5F, 11.0F, -13.0F);
+		FootTop11.cubeList.add(new ModelBox(FootTop11, 260, 50, -1.5F, 10.0F, -3.0F, 3, 1, 5, 0.0F, true));
+
+		UpperLeg12 = new ModelRenderer(this);
+		UpperLeg12.setRotationPoint(10.0F, 10.0F, 15.5F);
+		setRotationAngle(UpperLeg12, 1.1019F, 0.0F, 0.0F);
+		UpperLeg12.cubeList.add(new ModelBox(UpperLeg12, 285, 40, -2.0F, -2.5F, -10.0F, 4, 5, 10, 0.0F, true));
+
+		LowerLeg12 = new ModelRenderer(this);
+		LowerLeg12.setRotationPoint(10.0F, 10.0F, 15.5F);
+		setRotationAngle(LowerLeg12, -0.4786F, 0.0F, 0.0F);
+		LowerLeg12.cubeList.add(new ModelBox(LowerLeg12, 320, 40, -1.5F, 5.0F, -2.0F, 3, 4, 11, 0.0F, true));
+
+		FootBase12 = new ModelRenderer(this);
+		FootBase12.setRotationPoint(10.0F, 10.0F, 15.5F);
+		FootBase12.cubeList.add(new ModelBox(FootBase12, 350, 40, -1.5F, 12.0F, -4.0F, 3, 1, 9, 0.0F, true));
+
+		FootTop12 = new ModelRenderer(this);
+		FootTop12.setRotationPoint(10.0F, 10.0F, 15.5F);
+		FootTop12.cubeList.add(new ModelBox(FootTop12, 350, 51, -1.5F, 11.0F, -2.0F, 3, 1, 7, 0.0F, true));
+
+		UpperLeg22 = new ModelRenderer(this);
+		UpperLeg22.setRotationPoint(-10.0F, 10.0F, 15.5F);
+		setRotationAngle(UpperLeg22, 1.1019F, 0.0F, 0.0F);
+		UpperLeg22.cubeList.add(new ModelBox(UpperLeg22, 285, 40, -2.0F, -2.5F, -10.0F, 4, 5, 10, 0.0F, true));
+
+		LowerLeg22 = new ModelRenderer(this);
+		LowerLeg22.setRotationPoint(-10.0F, 10.0F, 15.5F);
+		setRotationAngle(LowerLeg22, -0.4786F, 0.0F, 0.0F);
+		LowerLeg22.cubeList.add(new ModelBox(LowerLeg22, 320, 40, -1.5F, 6.0F, -2.0F, 3, 4, 11, 0.0F, true));
+
+		FootBase22 = new ModelRenderer(this);
+		FootBase22.setRotationPoint(-10.0F, 10.0F, 15.5F);
+		FootBase22.cubeList.add(new ModelBox(FootBase22, 350, 40, -1.5F, 12.0F, -4.0F, 3, 1, 9, 0.0F, true));
+
+		FootTop22 = new ModelRenderer(this);
+		FootTop22.setRotationPoint(-10.0F, 10.0F, 15.5F);
+		FootTop22.cubeList.add(new ModelBox(FootTop22, 350, 51, -1.5F, 11.0F, -2.0F, 3, 1, 7, 0.0F, true));
+
+		WingMidBone2 = new ModelRenderer(this);
+		WingMidBone2.setRotationPoint(26.0F, 2.5F, -11.0F);
+		WingMidBone2.cubeList.add(new ModelBox(WingMidBone2, 230, 100, -0.5F, -0.5F, 0.0F, 1, 0, 24, 0.0F, true));
+
+		WingWeb12 = new ModelRenderer(this);
+		WingWeb12.setRotationPoint(8.0F, 2.0F, -8.0F);
+		WingWeb12.cubeList.add(new ModelBox(WingWeb12, 390, 36, 0.0F, 0.0F, -3.0F, 18, 0, 24, 0.0F, true));
+
+		WingWeb21 = new ModelRenderer(this);
+		WingWeb21.setRotationPoint(-26.0F, 2.0F, -11.0F);
+		WingWeb21.cubeList.add(new ModelBox(WingWeb21, 0, 93, -31.0F, 0.0F, 0.0F, 31, 0, 25, 0.0F, true));
+
+		Tail1 = new ModelRenderer(this);
+		Tail1.setRotationPoint(0.0F, 3.0F, 17.0F);
+		setRotationAngle(Tail1, -0.5056F, 0.0F, 0.0F);
+		Tail1.cubeList.add(new ModelBox(Tail1, 0, 0, -4.0F, 0.0F, 0.0F, 8, 6, 11, 0.0F, true));
+
+		Tail2 = new ModelRenderer(this);
+		Tail2.setRotationPoint(0.0F, 10.9667F, 24.0F);
+		setRotationAngle(Tail2, -0.4634F, 0.0F, 0.0F);
+		Tail2.cubeList.add(new ModelBox(Tail2, 40, 0, -2.5F, -2.5F, 0.0F, 5, 5, 10, 0.0F, true));
+
+		Tail3 = new ModelRenderer(this);
+		Tail3.setRotationPoint(0.0F, 15.0F, 32.0F);
+		setRotationAngle(Tail3, -0.6741F, 0.0F, 0.0F);
+		Tail3.cubeList.add(new ModelBox(Tail3, 75, 0, -2.0F, -2.0F, 0.0F, 4, 4, 11, 0.0F, true));
+
+		Tail4 = new ModelRenderer(this);
+		Tail4.setRotationPoint(0.0F, 21.0F, 39.0F);
+		setRotationAngle(Tail4, -0.4213F, 0.0F, 0.0F);
+		Tail4.cubeList.add(new ModelBox(Tail4, 0, 19, -1.5F, -1.5F, 0.0F, 3, 3, 6, 0.0F, true));
+
+		Tail5 = new ModelRenderer(this);
+		Tail5.setRotationPoint(0.0F, 23.0F, 44.0F);
+		setRotationAngle(Tail5, -0.2107F, 0.0F, 0.0F);
+		Tail5.cubeList.add(new ModelBox(Tail5, 20, 19, -1.0F, -1.0F, 0.0F, 2, 2, 5, 0.0F, true));
+
+		Tail6 = new ModelRenderer(this);
+		Tail6.setRotationPoint(0.0F, 24.0F, 48.0F);
+		setRotationAngle(Tail6, -0.2107F, 0.0F, 0.0F);
+		Tail6.cubeList.add(new ModelBox(Tail6, 0, 31, -0.5F, -0.5F, 0.0F, 1, 1, 5, 0.0F, true));
 	}
 
-	private void setRotationLeg11X(float x) {
-		UpperLeg11.rotateAngleX = -0.8179311F + x;
-		LowerLeg11.rotateAngleX = -2.416618F + x;
-		FootTop11.rotateAngleX = x;
-		FootBase11.rotateAngleX = x;
+	@Override
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		WingWeb11.render(f5);
+		WingWeb22.render(f5);
+		WingMidBone1.render(f5);
+		WingJoint1.render(f5);
+		WingJoint2.render(f5);
+		Belly.render(f5);
+		Body1.render(f5);
+		Body2.render(f5);
+		Body3.render(f5);
+		Rear.render(f5);
+		Spine1.render(f5);
+		Spine2.render(f5);
+		Spine3.render(f5);
+		Spine4.render(f5);
+		Spine5.render(f5);
+		Spine6.render(f5);
+		SideNeck1.render(f5);
+		SideNeck2.render(f5);
+		Neck1.render(f5);
+		Neck2.render(f5);
+		Head.render(f5);
+		UpperJaw.render(f5);
+		LowerJaw.render(f5);
+		Nose.render(f5);
+		NoseTop.render(f5);
+		SideNoseAndFrontTeeth1.render(f5);
+		SideNoseAndFrontTeeth2.render(f5);
+		BackTeeth1.render(f5);
+		BackTeeth2.render(f5);
+		Eye1.render(f5);
+		Eye2.render(f5);
+		EyeTop.render(f5);
+		FaceWeb12.render(f5);
+		FaceWeb22.render(f5);
+		FaceWeb11.render(f5);
+		FaceWeb21.render(f5);
+		FaceWebMiddle.render(f5);
+		UpperLeg21.render(f5);
+		LowerLeg21.render(f5);
+		FootBase21.render(f5);
+		FootTop21.render(f5);
+		UpperLeg11.render(f5);
+		LowerLeg11.render(f5);
+		FootBase11.render(f5);
+		FootTop11.render(f5);
+		UpperLeg12.render(f5);
+		LowerLeg12.render(f5);
+		FootBase12.render(f5);
+		FootTop12.render(f5);
+		UpperLeg22.render(f5);
+		LowerLeg22.render(f5);
+		FootBase22.render(f5);
+		FootTop22.render(f5);
+		WingMidBone2.render(f5);
+		WingWeb12.render(f5);
+		WingWeb21.render(f5);
+		Tail1.render(f5);
+		Tail2.render(f5);
+		Tail3.render(f5);
+		Tail4.render(f5);
+		Tail5.render(f5);
+		Tail6.render(f5);
 	}
 
-	private void setRotationLeg22X(float x) {
-		UpperLeg22.rotateAngleX = 1.101896F + x;
-		LowerLeg22.rotateAngleX = -0.4786337F + x;
-		FootTop22.rotateAngleX = x;
-		FootBase22.rotateAngleX = x;
+	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
+		modelRenderer.rotateAngleX = x;
+		modelRenderer.rotateAngleY = y;
+		modelRenderer.rotateAngleZ = z;
 	}
-
-	private void setRotationLeg12X(float x) {
-		UpperLeg12.rotateAngleX = 1.101896F + x;
-		LowerLeg12.rotateAngleX = -0.4786337F + x;
-		FootTop12.rotateAngleX = x;
-		FootBase12.rotateAngleX = x;
-	}
-
-	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5, Entity entity) {
-		super.setRotationAngles(f, f1, f2, f3, f4, f5, entity);
-		setRotationLeg12X(MathHelper.cos(f * 0.6662F) * 1.4F * f1);
-		setRotationLeg22X(MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1);
-		setRotationLeg11X(MathHelper.cos(f * 0.6662F + (float)Math.PI) * 1.4F * f1);
-		setRotationLeg21X(MathHelper.cos(f * 0.6662F) * 1.4F * f1);
-	}
-
 }
